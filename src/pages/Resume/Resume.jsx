@@ -2,6 +2,7 @@ import React from 'react';
 import { FaBookReader, FaRegBookmark } from "react-icons/fa";
 import TimelineItem from './TimelineItem';
 import SkillItem from './SkillItem';
+import ResumeDownload from './ResumeDownload';
 
 const Resume = () => {
   return (
@@ -72,6 +73,10 @@ Served as a member of the School Cabinet, demonstrating leadership and organizat
           <SkillItem title="Competitive Coding" value={70} />
           <SkillItem title="Communication" value={50} />
         </ul>
+      </div>
+
+      <div className="btn">
+        <ResumeDownload></ResumeDownload>
       </div>
     </section>
   );
