@@ -1,0 +1,21 @@
+[
+    {
+      "id": 1,
+      "title": "Robotix Club-NIT Raipur",
+      "category": "Web development",
+      "image": "images/project-1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Technocracy-Commitee",
+      "category": "Web development",
+      "image": "images/project-2.png"
+    },
+    {
+      "id": 3,
+      "title": "HacktoberFest",
+      "category": "Web design/development",
+      "image": "images/project-3.jpg"
+    }
+  ]
+  
