@@ -12,55 +12,49 @@ const servicesData = [
   },
   {
     icon: "/images/icon-dev.svg",
-    title: "Web development",
-    description: "High-quality development of sites at the professional level."
+    title: "Web Development",
+    description: "High-quality development of websites and web applications with a focus on performance, scalability, and user experience."
   },
   {
     icon: "/images/icon-app.svg",
     title: "Open-Source Contributor",
-    description: "Actively contribute to open-source projects, enhancing collaborative development and community-driven innovation."
+    description: "Actively contributes to open-source projects, enhancing collaborative development and community-driven innovation."
   },
   {
     icon: "/images/icon-photo.svg",
-    title: "Drawing/Painting",
-    description: "Enjoy drawing and painting as a creative outlet to explore ideas and express individuality."
+    title: "Keen Learner",
+    description: "Continuously expands knowledge and skills by exploring new technologies, frameworks, and problem-solving approaches to stay ahead in the ever-evolving tech landscape."
   }
 ];
 
-
 const About = () => {
-//   const [testimonials , setTestimonials ] = useState([]);
-//   useEffect(()=> {
-//     fetch('testimonials.json').then(res => res.json()).then(data => {
-//       console.log(data)
-//       setTestimonials(data)
-//     });
-//   }, [])
+  // const [testimonials, setTestimonials] = useState([]);
+  // useEffect(() => {
+  //   fetch('testimonials.json').then(res => res.json()).then(data => {
+  //     console.log(data)
+  //     setTestimonials(data)
+  //   });
+  // }, [])
+  
   return (
-    <article className="about  active" data-page="about">
+    <article className="about active" data-page="about">
 
-    <header>
-      <h2 className="h2 article-title">About me</h2>
-    </header>
+      <header>
+        <h2 className="h2 article-title">About me</h2>
+      </header>
 
-    <section className="about-text">
-      <p>
-      I am Ayush Patel, a B.Tech student in Information Technology at NIT Raipur, passionate about technology and innovation. With a strong foundation in programming and competitive coding, I actively contribute to open-source projects and engage in developing impactful tech solutions. I enjoy exploring creative pursuits like drawing and painting alongside honing my technical expertise.
-      </p>
-    </section>
+      <section className="about-text">
+        <p>
+          I am Ayush Patel, a B.Tech student in Information Technology at NIT Raipur, passionate about technology and innovation. With a strong foundation in programming and competitive coding, I actively contribute to open-source projects and engage in developing impactful tech solutions. I enjoy exploring creative pursuits alongside honing my technical expertise.
+        </p>
+      </section>
 
+      {/* <!-- - service --> */}
+      <section className="service">
+        <h3 className="h3 service-title">What I'm doing</h3>
 
-    {/* <!--
-      - service
-    --> */}
-
-    <section className="service">
-
-      <h3 className="h3 service-title">What i'm doing</h3>
-
-      <ul className="service-list">
-
-      {servicesData.map((service, index) => (
+        <ul className="service-list">
+          {servicesData.map((service, index) => (
             <Service
               key={index}
               icon={service.icon}
@@ -68,23 +62,15 @@ const About = () => {
               description={service.description}
             />
           ))}
+        </ul>
+      </section>
 
-      </ul>
-
-    </section>
-
-
-    {/* <!--
-      - testimonials
-    --> */}
-{/* 
-    <section className="testimonials">
-
-      <h3 className="h3 testimonials-title">Testimonials</h3>
-
-      <ul className="testimonials-list has-scrollbar">
-
-      {testimonials.map((testimonial, index) => (
+      {/* <!-- - testimonials --> */}
+      {/*
+      <section className="testimonials">
+        <h3 className="h3 testimonials-title">Testimonials</h3>
+        <ul className="testimonials-list has-scrollbar">
+          {testimonials.map((testimonial, index) => (
             <Testimonial
               key={index}
               name={testimonial.name}
@@ -92,46 +78,36 @@ const About = () => {
               testimonial={testimonial.testimonial}
             />
           ))}
+        </ul>
+      </section>
+      */}
 
-      </ul>
-
-    </section> */}
-
-
-    {/* <!--
-      - clients
-    --> */}
-{/* 
-    <section className="clients">
-
-      <h3 className="h3 clients-title">Clients</h3>
-
-      <ul className="clients-list has-scrollbar">
-
-        <li className="clients-item">
-          <a href="#">
-            <img src="images/logo-1-color.png" alt="client logo"/>
-          </a>
-        </li>
-
-        <li className="clients-item">
-          <a href="#">
-            <img src="images/logo-2-color.png" alt="client logo"/>
-          </a>
-        </li>
-
-        <li className="clients-item">
-          <a href="#">
-            <img src="images/logo-3-color.png" alt="client logo"/>
-          </a>
-        </li>
-
-      </ul> */}
-
-    {/* </section> */}
-
-  </article>
+      {/* <!-- - clients --> */}
+      {/*
+      <section className="clients">
+        <h3 className="h3 clients-title">Clients</h3>
+        <ul className="clients-list has-scrollbar">
+          <li className="clients-item">
+            <a href="#">
+              <img src="images/logo-1-color.png" alt="client logo"/>
+            </a>
+          </li>
+          <li className="clients-item">
+            <a href="#">
+              <img src="images/logo-2-color.png" alt="client logo"/>
+            </a>
+          </li>
+          <li className="clients-item">
+            <a href="#">
+              <img src="images/logo-3-color.png" alt="client logo"/>
+            </a>
+          </li>
+        </ul>
+      </section>
+      */}
+      
+    </article>
   )
 }
 
-export default About
+export default About;
