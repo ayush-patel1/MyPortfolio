@@ -60,18 +60,17 @@ const Aside = () => {
               </div>
             </li>
 
-            <li className="contact-item">
-              <div className="icon-box">
-                <GiCalendar/>
-               
-              </div>
+        <li className="contact-item">
+  <div className="icon-box">
+    <GiCalendar />
+  </div>
 
-              <div className="contact-info">
-                <p className="contact-title">Birthday</p>
+  <div className="contact-info">
+    <p className="contact-title">Date of Birth</p>
+    <time dateTime="2005-10-26">October 26, 2005</time>
+  </div>
+</li>
 
-                <time dateTime="2005-10-26">26,Oct,2005</time>
-              </div>
-            </li>
 
             <li className="contact-item">
               <div className="icon-box">
