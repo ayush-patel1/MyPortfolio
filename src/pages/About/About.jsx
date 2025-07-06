@@ -45,7 +45,7 @@ const About = () => {
           I enjoy exploring new technologies and honing my technical expertise with a mindset of continuous learning and growth.
         </p>
 
-        <p style={{ marginTop: "1rem" }}>
+{/*         <p style={{ marginTop: "1rem" }}>
           <strong>My Profiles:</strong><br />
           <a href="https://codeforces.com/profile/ayush_patel05" target="_blank" rel="noopener noreferrer">
             Codeforces
@@ -62,7 +62,7 @@ const About = () => {
           <a href="https://www.linkedin.com/in/ayush-patel05/" target="_blank" rel="noopener noreferrer">
             LinkedIn
           </a>
-        </p>
+        </p> */}
       </section>
 
       <section className="service">
