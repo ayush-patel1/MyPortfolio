@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import Service from "../About/Service";
+import Terminal from "../../components/Terminal";
 
 const servicesData = [
   {
@@ -35,6 +36,11 @@ const About = () => {
       <header>
         <h2 className="h2 article-title">About me</h2>
       </header>
+
+      {/* CLI Terminal Section */}
+      <section className="terminal-section" style={{ marginBottom: '3rem' }}>
+        <Terminal />
+      </section>
 
       <section className="about-text">
         <p>
