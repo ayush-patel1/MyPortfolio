@@ -1,15 +1,45 @@
 [
     {
       "id": 1,
-      "title": "Weather App",
-      "category": "Web development",
-      "image": "images/project2.png"
+      "title": "Safety Management System",
+      "category": "Web Application",
+      "description": "A comprehensive safety management system with real-time monitoring, incident reporting, and compliance tracking features.",
+      "image": "images/project1.png",
+      "technologies": ["React", "Node.js", "MongoDB", "Express"],
+      "github": "https://github.com/ayush-patel1/safety-management",
+      "demo": "#"
     },
     {
       "id": 2,
-      "title": "Food-Delivery",
-      "category": "Web development",
-      "image": "images/project1.png"
+      "title": "Link Manager Extension",
+      "category": "Browser Extension",
+      "description": "A powerful Chrome extension for organizing, managing, and quickly accessing your bookmarks and links with advanced search and categorization.",
+      "image": "images/project2.png",
+      "technologies": ["JavaScript", "Chrome API", "HTML5", "CSS3"],
+      "github": "https://github.com/ayush-patel1/link-manager-extension",
+      "demo": "#"
+    },
+    {
+      "id": 3,
+      "title": "Team Technocracy Website",
+      "category": "Group Project",
+      "description": "College tech fest website featuring Team page, Aavartan event page, and Vigyaan event page. Developed as part of a collaborative team project with dynamic event showcases and team member profiles.",
+      "image": "images/project3.png",
+      "technologies": ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
+      "github": "#",
+      "demo": "https://technocracy.nitrr.ac.in/",
+      "role": "Frontend Developer - Team, Aavartan & Vigyaan Pages"
+    },
+    {
+      "id": 4,
+      "title": "Vigyaan Portal",
+      "category": "Collaboration Platform",
+      "description": "Co-developed Vigyaan Portal, an open platform for project sharing and collaboration. Features project showcases, user profiles, and collaborative tools for the tech community.",
+      "image": "images/project4.png",
+      "technologies": ["React", "Node.js", "MongoDB", "Express"],
+      "github": "https://github.com/CodeWithDevesh/Vigyaan-Portal",
+      "demo": "#",
+      "role": "Co-Developer"
     }
   ]
   

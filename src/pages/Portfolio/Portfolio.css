@@ -1,0 +1,170 @@
+/* Portfolio Section Enhancements */
+.projects {
+  position: relative;
+}
+
+/* Smooth entrance animation for project list */
+.project-list {
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered animation for project items */
+.project-item {
+  opacity: 0;
+  animation: slideInUp 0.6s ease-out forwards;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Glow effect on hover */
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(45deg, 
+    var(--orange-yellow-crayola), 
+    hsl(35, 100%, 55%), 
+    var(--orange-yellow-crayola)
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.project-card:hover::before {
+  opacity: 0.8;
+  animation: borderGlow 2s ease-in-out infinite;
+}
+
+@keyframes borderGlow {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Interactive title effect */
+.project-title {
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.project-card:hover .project-title {
+  color: var(--orange-yellow-crayola);
+}
+
+.project-title::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--orange-yellow-crayola);
+  transition: width 0.4s ease;
+}
+
+.project-card:hover .project-title::after {
+  width: 100%;
+}
+
+/* Responsive grid improvements */
+@media (min-width: 580px) {
+  .project-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .project-list {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+}
+
+/* Loading state animation */
+.project-list:empty::after {
+  content: 'Loading projects...';
+  display: block;
+  text-align: center;
+  color: var(--light-gray-70);
+  font-size: var(--fs-5);
+  padding: 40px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Category badge animation */
+.project-category {
+  position: relative;
+  display: inline-block;
+  padding: 4px 12px;
+  margin-top: 8px;
+  background: rgba(255, 165, 0, 0.1);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover .project-category {
+  background: rgba(255, 165, 0, 0.2);
+  transform: translateX(5px);
+}
+
+/* Project Role Styling */
+.project-role {
+  color: var(--light-gray-70);
+  font-size: var(--fs-7);
+  margin: 10px 0;
+  padding: 8px 12px;
+  background: rgba(100, 100, 255, 0.1);
+  border-left: 3px solid var(--orange-yellow-crayola);
+  border-radius: 4px;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.role-label {
+  color: var(--orange-yellow-crayola);
+  font-weight: var(--fw-500);
+  font-style: normal;
+}
+
+.project-card:hover .project-role {
+  background: rgba(100, 100, 255, 0.15);
+  transform: translateX(3px);
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
