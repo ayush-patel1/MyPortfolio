@@ -1,32 +1,45 @@
 /* eslint-disable react/no-unescaped-entities */
 
-import Service from "../About/Service";
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { SiLeetcode, SiCodechef, SiCodeforces } from 'react-icons/si';
 import Terminal from "../../components/Terminal";
+import './About.css';
 
-const servicesData = [
+const profileLinks = [
   {
-    icon: "/images/icon-design.svg",
-    title: "Competitive Coder",
-    description:
-      "Demonstrates a modern and high-quality approach to competitive coding, solving complex problems with precision and efficiency on platforms like Codeforces, Codechef, and LeetCode."
+    icon: <FaGithub />,
+    title: "GitHub",
+    url: "https://github.com/ayush-patel1",
+    description: "Open source contributions and projects",
+    color: "#fffdfdff"
   },
   {
-    icon: "/images/icon-dev.svg",
-    title: "Web Development",
-    description:
-      "High-quality development of websites and web applications with a focus on performance, scalability, and user experience."
+    icon: <FaLinkedin />,
+    title: "LinkedIn",
+    url: "https://www.linkedin.com/in/ayush-patel05/",
+    description: "Professional network and experience",
+    color: "#1c16cbff"
   },
   {
-    icon: "/images/icon-app.svg",
-    title: "Open-Source Contributor",
-    description:
-      "Actively contributes to open-source projects through platforms and events like OpenCode and Hacktoberfest, enhancing collaborative development and community-driven innovation."
+    icon: <SiLeetcode />,
+    title: "LeetCode",
+    url: "https://leetcode.com/ayush005rkt",
+    description: "Problem solving and algorithms",
+    color: "#ff9407ff"
   },
   {
-    icon: "/images/icon-photo.svg",
-    title: "Keen Learner",
-    description:
-      "Continuously expands knowledge and skills by exploring new technologies, frameworks, and problem-solving approaches to stay ahead in the ever-evolving tech landscape."
+    icon: <SiCodechef />,
+    title: "CodeChef",
+    url: "https://www.codechef.com/users/nlogn_sorted",
+    description: "Competitive programming contests",
+    color: "#834217ff"
+  },
+  {
+    icon: <SiCodeforces />,
+    title: "Codeforces",
+    url: "https://codeforces.com/profile/ayush.rtr",
+    description: "Algorithmic problem solving",
+    color: "#cb441fff"
   }
 ];
 
@@ -38,55 +51,39 @@ const About = () => {
       </header>
 
       {/* CLI Terminal Section */}
-      <section className="terminal-section" style={{ marginBottom: '3rem' }}>
+      <section className="terminal-section">
         <Terminal />
       </section>
 
-      <section className="about-text">
-        <p>
-          I am Ayush Patel, a B.Tech student in Information Technology at NIT Raipur, passionate about technology and innovation.
-          With a strong foundation in programming and competitive coding, I actively participate on platforms like Codeforces, Codechef, and LeetCode,
-          solving complex problems to improve my skills and ranking.
-          I contribute to open-source communities through initiatives like OpenCode and Hacktoberfest, building impactful projects collaboratively.
-          I enjoy exploring new technologies and honing my technical expertise with a mindset of continuous learning and growth.
-        </p>
+      {/* Profile Links Section */}
+      <section className="service" style={{ marginTop: '3rem' }}>
+        <h3 className="h3 service-title">Connect With Me</h3>
 
-{/*         <p style={{ marginTop: "1rem" }}>
-          <strong>My Profiles:</strong><br />
-          <a href="https://codeforces.com/profile/ayush_patel05" target="_blank" rel="noopener noreferrer">
-            Codeforces
-          </a>{" | "}
-          <a href="https://www.codechef.com/users/ayush_patel1" target="_blank" rel="noopener noreferrer">
-            Codechef
-          </a>{" | "}
-          <a href="https://leetcode.com/ayush_patel05" target="_blank" rel="noopener noreferrer">
-            LeetCode
-          </a>{" | "}
-          <a href="https://github.com/ayush-patel1" target="_blank" rel="noopener noreferrer">
-            GitHub
-          </a>{" | "}
-          <a href="https://www.linkedin.com/in/ayush-patel05/" target="_blank" rel="noopener noreferrer">
-            LinkedIn
-          </a>
-        </p> */}
-      </section>
+        <ul className="service-list profile-links-grid">
+          {profileLinks.map((profile, index) => (
+            <li className="service-item profile-link-card" key={index}>
+              <a 
+                href={profile.url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="profile-link"
+                style={{ textDecoration: 'none', color: 'inherit' }}
+              >
+                <div className="service-icon-box" style={{ fontSize: '2.5rem', color: profile.color }}>
+                  {profile.icon}
+                </div>
 
-      <section className="service">
-        <h3 className="h3 service-title">What I'm doing</h3>
-
-        <ul className="service-list">
-          {servicesData.map((service, index) => (
-            <Service
-              key={index}
-              icon={service.icon}
-              title={service.title}
-              description={service.description}
-            />
+                <div className="service-content-box">
+                  <h4 className="h4 service-item-title">{profile.title}</h4>
+                  <p className="service-item-text">
+                    {profile.description}
+                  </p>
+                </div>
+              </a>
+            </li>
           ))}
         </ul>
       </section>
-
-      {/* Testimonials and Clients sections remain commented for now */}
     </article>
   );
 };
