@@ -1,8 +1,11 @@
 import React from 'react';
-import { FaBookReader, FaRegBookmark } from "react-icons/fa";
+import { FaBookReader, FaRegBookmark, FaReact, FaNodeJs, FaPython, FaCode, FaPalette, FaBrain } from "react-icons/fa";
+import { SiJavascript, SiMongodb, SiCplusplus, SiGit, SiFigma, SiTailwindcss } from "react-icons/si";
 import TimelineItem from './TimelineItem';
 import SkillItem from './SkillItem';
 import ResumeDownload from './ResumeDownload';
+import Timeline from '../../components/Timeline';
+import './Resume.css';
 
 const Resume = () => {
   return (
@@ -11,72 +14,76 @@ const Resume = () => {
         <h2 className="h2 article-title">Resume</h2>
       </header>
 
-      <div className="timeline">
-        <div className="title-wrapper">
-          <div className="icon-box">
-            <FaBookReader />
-          </div>
-          <h3 className="h3">Education</h3>
-        </div>
-        <ol className="timeline-list">
-          <TimelineItem
-            title="National Institute of Technology, Raipur"
-            date="2023-2027(Expected)"
-            description="Pursuing a comprehensive curriculum in IT, focusing on core technical skills and innovative problem-solving. Actively engaged in technical projects, coding challenges, and leadership roles within student committees."
-          />
-          <TimelineItem
-            title="Nirmala Convent High School, Renukoot , India"
-            date="2022 — 2023"
-            description="12th Grade Scholar | Apr 2022 - Mar 2023 | Grade: 95.8%
-Served as a member of the School Cabinet, demonstrating leadership and organizational skills. Actively participated in sports, including swimming competitions, showcasing a well-rounded skill set."
-          />
-          <TimelineItem
-            title="Nirmala Convent High School, Renukoot, India"
-            date="2020 — 2021"
-            description="10th Grade Scholar | Mar 2020 - Apr 2021 | Grade: 98.6%
-           Actively participated in cultural activities and contributed to organizing various school functions, showcasing teamwork and leadership skills."
-          />
-        </ol>
-      </div>
-
+      {/* Interactive Horizontal Timeline */}
       <div className="timeline">
         <div className="title-wrapper">
           <div className="icon-box">
             <FaRegBookmark />
           </div>
-          <h3 className="h3">Experience</h3>
+          <h3 className="h3">My Journey</h3>
         </div>
-        <ol className="timeline-list">
-          <TimelineItem
-            title="Robotix Club"
-            date="2023 — Present"
-            description="Designed and implemented features to enhance the club’s website, including event listings, speaker profiles, and real-time updates. Collaborated with members to gather feedback and optimize user experience."
-          />
-          <TimelineItem
-            title="Technocracy Commitee"
-            date="2024 — Present"
-            description="Collaborated with a cross-functional team to ensure timely delivery and provided real-time updates during events. Continuously optimized the platform based on user feedback to enhance engagement and accessibility"
-          />
-          {/* <TimelineItem
-            title="Web designer"
-            date="2010 — 2013"
-            description="Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et quas molestias exceptur."
-          /> */}
-        </ol>
+        <Timeline />
       </div>
 
       <div className="skill">
-        <h3 className="h3 skills-title">My skills</h3>
-        <ul className="skills-list content-card">
-          <SkillItem title="Web Development" value={80} />
-          <SkillItem title="Data Structures & Algorithms" value={70} />
-          <SkillItem title="Competitive Coding" value={70} />
-          <SkillItem title="Communication" value={50} />
-        </ul>
+        <h3 className="h3 skills-title">My Skills</h3>
+        
+        {/* Frontend Skills */}
+        <div className="skills-category">
+          <div className="category-header">
+            <FaCode className="category-icon" />
+            <h4 className="category-title">Frontend Development</h4>
+          </div>
+          <ul className="skills-list content-card">
+            <SkillItem title="React & Modern Frameworks" value={85} icon={<FaReact />} />
+            <SkillItem title="JavaScript/TypeScript" value={80} icon={<SiJavascript />} />
+            <SkillItem title="HTML5 & CSS3" value={90} icon={<FaCode />} />
+            <SkillItem title="Tailwind CSS" value={75} icon={<SiTailwindcss />} />
+          </ul>
+        </div>
+
+        {/* Backend & Database */}
+        <div className="skills-category">
+          <div className="category-header">
+            <FaNodeJs className="category-icon" />
+            <h4 className="category-title">Backend & Database</h4>
+          </div>
+          <ul className="skills-list content-card">
+            <SkillItem title="Node.js & Express" value={80} icon={<FaNodeJs />} />
+            <SkillItem title="MongoDB" value={75} icon={<SiMongodb />} />
+            <SkillItem title="REST APIs" value={85} icon={<FaCode />} />
+          </ul>
+        </div>
+
+        {/* Programming & DSA */}
+        <div className="skills-category">
+          <div className="category-header">
+            <FaBrain className="category-icon" />
+            <h4 className="category-title">Programming & Algorithms</h4>
+          </div>
+          <ul className="skills-list content-card">
+            <SkillItem title="Data Structures & Algorithms" value={75} icon={<SiCplusplus />} />
+            <SkillItem title="C++ / Python" value={80} icon={<FaPython />} />
+            <SkillItem title="Problem Solving" value={85} icon={<FaBrain />} />
+          </ul>
+        </div>
+
+        {/* Tools & Design */}
+        <div className="skills-category">
+          <div className="category-header">
+            <FaPalette className="category-icon" />
+            <h4 className="category-title">Tools & Design</h4>
+          </div>
+          <ul className="skills-list content-card">
+            <SkillItem title="Git & GitHub" value={85} icon={<SiGit />} />
+            <SkillItem title="UI/UX Design" value={70} icon={<FaPalette />} />
+            <SkillItem title="Figma" value={65} icon={<SiFigma />} />
+          </ul>
+        </div>
       </div>
 
       <div className="btn">
-        <ResumeDownload></ResumeDownload>
+        <ResumeDownload />
       </div>
     </section>
   );
