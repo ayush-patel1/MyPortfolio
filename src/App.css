@@ -3,7 +3,7 @@
 :root {
 
   /**
-   * colors
+   * colors - Dark Mode (default)
    */
 
   /* gradient */
@@ -55,6 +55,7 @@
   --light-gray: hsl(0, 0%, 84%);
   --light-gray-70: hsla(0, 0%, 84%, 0.7);
   --bittersweet-shimmer: hsl(15, 79%, 50%);
+  --border-color: hsla(0, 0%, 25%, 0.3);
 
   /**
    * typography
@@ -98,8 +99,70 @@
 
 }
 
+/* Light Mode Theme */
+[data-theme="light"] {
+  /* gradient */
+  --bg-gradient-onyx: linear-gradient(
+    to bottom right, 
+    hsl(47, 93%, 54%) 3%, 
+    hsl(0, 0%, 95%) 97%
+  );
+  --bg-gradient-jet: linear-gradient(
+    to bottom right, 
+    hsla(64, 98%, 43%, 0.151) 0%, 
+    hsla(240, 2%, 98%, 0) 100%
+  ), hsl(0, 0%, 98%);
+  --bg-gradient-yellow-1: linear-gradient(
+    to bottom right, 
+    hsl(45, 100%, 69%) 0%, 
+    hsla(36, 100%, 69%, 0) 50%
+  );
+  --bg-gradient-yellow-2: linear-gradient(
+    135deg, 
+    hsla(45, 100%, 52%, 0.151) 0%, 
+    hsla(35, 100%, 68%, 0) 59.86%
+  ), hsl(0, 0%, 98%);
+  --border-gradient-onyx: linear-gradient(
+    to bottom right, 
+    hsl(0, 0%, 85%) 0%, 
+    hsla(0, 0%, 85%, 0) 50%
+  );
+  --text-gradient-yellow: linear-gradient(
+    to right, 
+    hsl(220, 70%, 45%)
+  );
 
+  /* solid colors */
+  --jet: hsl(0, 0%, 90%);
+  --onyx: hsl(45, 100%, 50%);
+  --eerie-black-1: hsl(45, 100%, 50%);
+  --eerie-black-2: hsl(0, 0%, 98%);
+  --smoky-black: hsl(0, 0%, 100%);
+  --white-1: hsl(0, 0%, 100%);
+  --white-2: hsl(0, 0%, 15%);
+  --orange-yellow-crayola: hsl(45, 100%, 50%);
+  --vegas-gold: hsl(45, 100%, 50%);
+  --light-gray: hsl(0, 0%, 40%);
+  --light-gray-70: hsla(0, 0%, 40%, 0.7);
+  --bittersweet-shimmer: hsl(15, 79%, 50%);
+  --border-color: hsla(0, 0%, 65%, 0.4);
 
+  /* shadows for light mode */
+  --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.08);
+  --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.08);
+  --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.1);
+  --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.08);
+  --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.1);
+}
+
+/* Smooth theme transition */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
 
 
 /*-----------------------------------*\
