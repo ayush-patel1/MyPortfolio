@@ -1,34 +1,35 @@
+import { FaDownload, FaFilePdf } from 'react-icons/fa';
+import Resume from '../../assets/Resume.pdf';
+import './ResumeDownload.css';
 
-import Resume from '../../assets/Resume.pdf'
 const ResumeDownload = () => {
-    const handleDownload = () => {
-      const resumeUrl = Resume; 
-      const link = document.createElement('a');
-      link.href = resumeUrl;
-      link.download = 'resume.pdf'; 
-      link.click();
-    };
-  
-    return (
-      <div>
-        <button
-          onClick={handleDownload}
-          style={{
-            margin:'3rem 1rem',
-            padding: '10px 20px',
-            fontSize: '16px',
-            cursor: 'pointer',
-            backgroundColor: '#FFD700', // Golden Yellow
-            color: '#000000', // Black
-            border: 'none',
-            borderRadius: '5px'
-          }}
-        >
-          Download Resume
-        </button>
-      </div>
-    );
+  const handleDownload = () => {
+    const resumeUrl = Resume; 
+    const link = document.createElement('a');
+    link.href = resumeUrl;
+    link.download = 'Ayush_Resume.pdf'; 
+    link.click();
   };
 
-  export default ResumeDownload;
+  return (
+    <div className="resume-download-container">
+      <button
+        onClick={handleDownload}
+        className="resume-download-btn"
+      >
+        <span className="btn-icon">
+          <FaFilePdf />
+        </span>
+        <span className="btn-text">Download Resume</span>
+        <span className="btn-download-icon">
+          <FaDownload />
+        </span>
+        <span className="btn-shine"></span>
+      </button>
+      <p className="download-hint">Click to download PDF version</p>
+    </div>
+  );
+};
+
+export default ResumeDownload;
   
