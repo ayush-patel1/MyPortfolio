@@ -937,6 +937,183 @@ main {
   font-weight: var(--fw-300);
 }
 
+/* Enhanced Project Card Styling */
+.project-card {
+  background: var(--eerie-black-2);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--jet);
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(255, 165, 0, 0.15);
+  border-color: var(--orange-yellow-crayola);
+}
+
+.project-content {
+  padding: 20px;
+}
+
+/* Project Overlay */
+.project-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.7) 100%);
+  padding: 20px;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2;
+}
+
+.project-overlay.active {
+  transform: translateY(0);
+}
+
+.project-description {
+  color: var(--white-2);
+  font-size: var(--fs-7);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Technology Stack Badges */
+.project-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 15px 0;
+}
+
+.tech-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  background: linear-gradient(135deg, var(--orange-yellow-crayola) 0%, hsl(35, 100%, 55%) 100%);
+  color: var(--eerie-black-1);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-600);
+  border-radius: 20px;
+  animation: fadeInUp 0.5s ease-out backwards;
+  transition: all 0.3s ease;
+  text-shadow: none;
+}
+
+.tech-badge:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 165, 0, 0.3);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Project Links */
+.project-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-size: var(--fs-7);
+  font-weight: var(--fw-500);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.github-link {
+  background: var(--jet);
+  color: var(--white-2);
+  border-color: var(--jet);
+}
+
+.github-link:hover {
+  background: transparent;
+  border-color: var(--white-2);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.demo-link {
+  background: var(--jet);
+  color: var(--white-2);
+  border-color: var(--jet);
+}
+
+.demo-link:hover {
+  background: transparent;
+  border-color: var(--white-2);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Improved animations */
+@keyframes scaleUp {
+  0% { 
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% { 
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.project-item.active {
+  display: block;
+  animation: scaleUp 0.5s ease forwards;
+}
+
+/* Floating animation for project items */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.project-item:hover .project-card {
+  animation: float 2s ease-in-out infinite;
+}
+
+/* Enhanced image hover effect */
+.project-item:hover .project-img img {
+  transform: scale(1.15) rotate(2deg);
+}
+
+/* Pulse animation for icon box */
+@keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+.project-item:hover .project-item-icon-box {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
 
 
 
