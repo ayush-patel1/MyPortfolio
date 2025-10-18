@@ -1,4 +1,4 @@
-import { GiCalendar, GiClawSlashes, GiMailbox, GiMayanPyramid, GiPhone } from "react-icons/gi";
+import { GiCalendar, GiClawSlashes, GiMailbox, GiMayanPyramid } from "react-icons/gi";
 
 const Aside = () => {
   return (
@@ -39,19 +39,6 @@ const Aside = () => {
               <p className="contact-title">Email</p>
               <a href="mailto:ayush005rkt@gmail.com" className="contact-link">
                 ayush005rkt@gmail.com
-              </a>
-            </div>
-          </li>
-
-          <li className="contact-item">
-            <div className="icon-box">
-              <GiPhone />
-            </div>
-
-            <div className="contact-info">
-              <p className="contact-title">Phone</p>
-              <a href="tel:+919792050354" className="contact-link">
-                +91-9792050354
               </a>
             </div>
           </li>
