@@ -1,0 +1,118 @@
+.statement-section {
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--ground);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 32px;
+  overflow: hidden;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.statement-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.statement-content {
+  max-width: 24ch;
+}
+
+.statement-label {
+  display: block;
+  margin-bottom: 28px;
+  color: var(--muted);
+}
+
+.statement-text {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3.8vw, 54px);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin: 0 0 36px 0;
+}
+
+.statement-accent-amber {
+  color: var(--amber);
+  font-style: normal;
+}
+
+.statement-attribution {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.attribution-line {
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background-color: var(--hairline);
+}
+
+/* Outlined Index Numeral */
+.statement-outline-numeral {
+  position: absolute;
+  right: 8%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-display);
+  font-size: clamp(140px, 24vw, 320px);
+  font-weight: 800;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(237, 231, 220, 0.12);
+  user-select: none;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Floating Circular Image drifting and rotating off the right edge */
+.floating-orb-wrapper {
+  position: absolute;
+  top: 15%;
+  right: -100px;
+  width: clamp(280px, 38vw, 480px);
+  height: clamp(280px, 38vw, 480px);
+  border-radius: 50%;
+  overflow: hidden;
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 1;
+  border: 1px solid var(--hairline);
+  will-change: transform;
+}
+
+.floating-orb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(1.2);
+}
+
+@media (max-width: 768px) {
+  .statement-section {
+    padding: 80px 20px;
+  }
+  
+  .statement-content {
+    max-width: 100%;
+  }
+
+  .statement-outline-numeral {
+    right: 2%;
+    opacity: 0.5;
+  }
+
+  .floating-orb-wrapper {
+    right: -160px;
+    opacity: 0.12;
+  }
+}

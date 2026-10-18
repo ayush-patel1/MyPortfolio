@@ -1,0 +1,112 @@
+:root {
+  /* Exact Color Palette */
+  --ground: #0A0C0E;
+  --secondary-ground: #101416;
+  --surface: #151A1C;
+  --ink: #EDE7DC;
+  --secondary-ink: #A6A69F;
+  --muted: #747873;
+  --amber: #E8913C;
+  --teal: #2E6B72;
+  --hairline: rgba(237, 231, 220, 0.13);
+  --hairline-hover: rgba(237, 231, 220, 0.30);
+  
+  /* Typography Tokens */
+  --font-display: 'Syne', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--ground);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: var(--ground);
+  color: var(--ink);
+  overflow-x: clip; /* Uses clip so position: sticky is preserved */
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ground);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(237, 231, 220, 0.18);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--amber);
+}
+
+/* Global Selection */
+::selection {
+  background: rgba(232, 145, 60, 0.25);
+  color: var(--ink);
+}
+
+/* Typography Utility Classes */
+.label-caps {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--secondary-ink);
+}
+
+.heading-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+.mono-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+}
+
+/* Accessible Focus States */
+:focus-visible {
+  outline: 1px dashed var(--amber);
+  outline-offset: 4px;
+}
+
+/* Hairline dividers */
+.hairline-sep {
+  width: 100%;
+  height: 1px;
+  background-color: var(--hairline);
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

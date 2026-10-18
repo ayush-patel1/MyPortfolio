@@ -1,0 +1,204 @@
+.arsenal-section {
+  position: relative;
+  background-color: var(--secondary-ground);
+  padding: 160px 32px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.arsenal-container {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.arsenal-header {
+  margin-bottom: 60px;
+}
+
+.arsenal-headline {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 4.5vw, 60px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--ink);
+  margin-top: 14px;
+}
+
+.arsenal-lede {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--secondary-ink);
+  max-width: 54ch;
+  margin-top: 12px;
+}
+
+.arsenal-grid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* Category Tabs */
+.arsenal-tabs-col {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border: 1px solid var(--hairline);
+  padding: 12px;
+  border-radius: 6px;
+  background-color: var(--surface);
+}
+
+.arsenal-tab-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.arsenal-tab-btn:hover {
+  background-color: rgba(237, 231, 220, 0.03);
+}
+
+.arsenal-tab-active {
+  background-color: rgba(237, 231, 220, 0.06);
+  border-color: var(--hairline);
+  border-left: 2px solid var(--amber);
+}
+
+.tab-code {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--teal);
+  letter-spacing: 0.12em;
+}
+
+.tab-name {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  flex: 1;
+  margin-left: 12px;
+}
+
+.tab-indicator {
+  font-family: var(--font-mono);
+  color: var(--muted);
+  font-size: 13px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.arsenal-tab-active .tab-indicator {
+  opacity: 1;
+  color: var(--amber);
+}
+
+/* Skills Panel */
+.arsenal-skills-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.skills-panel-header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--hairline);
+  margin-bottom: 24px;
+}
+
+.panel-kicker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--teal);
+  letter-spacing: 0.12em;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.panel-title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0;
+}
+
+.skills-items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.skill-item-card {
+  background-color: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  cursor: default;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+  outline: none;
+}
+
+.skill-item-card:hover,
+.skill-item-card:focus-visible {
+  border-color: var(--hairline-hover);
+  transform: translateY(-2px);
+}
+
+.skill-item-active {
+  border-color: var(--amber);
+}
+
+.skill-card-top {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.skill-accent-dash {
+  color: var(--amber);
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+.skill-name {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin: 0;
+}
+
+.skill-context {
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--secondary-ink);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .arsenal-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .arsenal-section {
+    padding: 100px 20px;
+  }
+}

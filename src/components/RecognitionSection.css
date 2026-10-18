@@ -1,0 +1,199 @@
+.recognition-section {
+  position: relative;
+  background-color: var(--ground);
+  padding: 160px 32px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.recognition-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.recognition-header {
+  margin-bottom: 60px;
+}
+
+.recognition-headline {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 4.5vw, 60px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--ink);
+  margin-top: 14px;
+}
+
+/* Achievements List */
+.achievements-list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 80px;
+}
+
+.achievement-row {
+  display: grid;
+  grid-template-columns: 120px 1fr auto;
+  align-items: baseline;
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--hairline);
+  transition: border-color 0.2s ease;
+}
+
+.achievement-row:hover {
+  border-bottom-color: var(--hairline-hover);
+}
+
+.ach-left {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.ach-numeral {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.ach-year {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--amber);
+}
+
+.ach-center {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ach-title {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin: 0;
+}
+
+.ach-desc {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--secondary-ink);
+  margin: 0;
+  max-width: 65ch;
+}
+
+.ach-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  border: 1px solid var(--hairline);
+  padding: 4px 10px;
+  border-radius: 3px;
+  background: rgba(46, 107, 114, 0.08);
+}
+
+/* Coding Profiles Block */
+.coding-profiles-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.profiles-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--hairline);
+  margin-bottom: 24px;
+}
+
+.profiles-meta {
+  color: var(--muted);
+}
+
+.profiles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.profile-box {
+  background-color: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  padding: 20px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+}
+
+.profile-box:hover {
+  border-color: var(--amber);
+  transform: translateY(-2px);
+}
+
+.profile-box-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.profile-name {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.profile-arrow {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  transition: color 0.2s;
+}
+
+.profile-box:hover .profile-arrow {
+  color: var(--amber);
+}
+
+.profile-handle {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--teal);
+  margin-bottom: 12px;
+}
+
+.profile-metric {
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  color: var(--secondary-ink);
+  border-top: 1px solid var(--hairline);
+  padding-top: 10px;
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .recognition-section {
+    padding: 100px 20px;
+  }
+
+  .achievement-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .ach-badge {
+    align-self: flex-start;
+  }
+}

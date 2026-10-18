@@ -1,0 +1,234 @@
+.roster-dates-section {
+  position: relative;
+  background-color: var(--ground);
+  padding: 140px 32px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.roster-dates-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+
+/* Header Row */
+.section-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--hairline);
+  margin-bottom: 32px;
+}
+
+.header-meta {
+  color: var(--muted);
+}
+
+/* Hairline Roster Rows */
+.roster-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.roster-row {
+  display: grid;
+  grid-template-columns: 180px 1fr auto;
+  align-items: center;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--hairline);
+  transition: background-color 0.2s ease;
+}
+
+.roster-row:hover {
+  background-color: rgba(237, 231, 220, 0.015);
+}
+
+.roster-tag-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.roster-accent-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--amber);
+  display: inline-block;
+}
+
+.roster-row:nth-child(even) .roster-accent-dot {
+  background-color: var(--teal);
+}
+
+.roster-tag {
+  color: var(--secondary-ink);
+}
+
+.roster-name {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.5vw, 32px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0;
+}
+
+.roster-count {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Dates Table */
+.dates-table-wrapper {
+  width: 100%;
+}
+
+.dates-table-header {
+  display: grid;
+  grid-template-columns: 80px 120px 2fr 1.5fr 2fr;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--hairline);
+  gap: 16px;
+}
+
+.table-th {
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.dates-table-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.dates-row {
+  display: grid;
+  grid-template-columns: 80px 120px 2fr 1.5fr 2fr;
+  align-items: baseline;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--hairline);
+  gap: 16px;
+  transition: border-color 0.2s ease;
+}
+
+.dates-row:hover {
+  border-bottom-color: var(--hairline-hover);
+}
+
+.dates-td {
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  color: var(--secondary-ink);
+}
+
+.td-idx {
+  font-size: 11px;
+  color: var(--muted);
+  font-family: var(--font-sans);
+}
+
+.td-year {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.td-title {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+
+.td-org {
+  color: var(--secondary-ink);
+}
+
+.td-discipline {
+  color: var(--muted);
+  font-size: 12.5px;
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 900px) {
+  .roster-row {
+    grid-template-columns: 1fr auto;
+    row-gap: 12px;
+  }
+
+  .roster-tag-box {
+    grid-column: 1 / -1;
+  }
+
+  /* Table collapses to 2-column grid per row on narrow screens */
+  .dates-table-header {
+    display: none;
+  }
+
+  .dates-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 16px;
+    padding: 20px 0;
+  }
+
+  .td-idx {
+    display: none;
+  }
+
+  .td-year {
+    grid-column: 2;
+    text-align: right;
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  .td-title {
+    grid-column: 1;
+    font-size: 16px;
+  }
+
+  .td-org {
+    grid-column: 1;
+    font-size: 13px;
+  }
+
+  .td-discipline {
+    grid-column: 2;
+    text-align: right;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .roster-dates-section {
+    padding: 80px 16px;
+  }
+
+  .roster-dates-container {
+    gap: 80px;
+  }
+
+  .dates-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .td-year, .td-discipline {
+    text-align: left;
+  }
+}
