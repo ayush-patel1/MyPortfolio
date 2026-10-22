@@ -146,6 +146,7 @@ const ExperienceTimeline = () => {
         {timelineItems.map((item, index) => (
           <details
             className={`timeline-item ${index % 2 === 0 ? 'timeline-item-left' : 'timeline-item-right'} ${item.current ? 'timeline-item-current' : ''}`}
+            style={{ '--timeline-reveal-delay': `${Math.min(index, 4) * 75}ms` }}
             key={`${item.organization}-${item.role}`}
           >
             <summary className="timeline-summary">
