@@ -1172,3 +1172,19 @@
     gap: 8px;
   }
 }
+
+
+/* Keep a deliberate buffer below the mobile navbar before the portrait begins. */
+@media (max-width: 768px) {
+  .portal-stage {
+    padding-top: max(108px, calc(env(safe-area-inset-top) + 100px));
+    padding-bottom: clamp(58px, 8vh, 64px);
+  }
+}
+
+@media (max-width: 390px) {
+  .portal-stage {
+    padding-top: max(100px, calc(env(safe-area-inset-top) + 94px));
+    padding-bottom: 58px;
+  }
+}
