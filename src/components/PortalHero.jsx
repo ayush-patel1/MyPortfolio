@@ -176,7 +176,6 @@ const PortalHero = () => {
         {/* Layer 6: Corner Metadata & Status */}
         <div className="corner-meta corner-top-left">
           <span className="label-caps">PORTFOLIO / 027</span>
-          <span className="meta-sub">NIT RAIPUR · IT · 2027</span>
         </div>
 
         <div className="corner-meta corner-top-right">
