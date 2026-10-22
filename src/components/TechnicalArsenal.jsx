@@ -1,18 +1,97 @@
 import React, { useState } from 'react';
+import {
+  FaBrain,
+  FaCloud,
+  FaCode,
+  FaCubes,
+  FaDatabase,
+  FaHtml5,
+  FaMicrochip,
+  FaNetworkWired,
+  FaPlug,
+  FaProjectDiagram,
+  FaPython,
+  FaReact,
+  FaRobot,
+  FaServer,
+  FaNodeJs,
+  FaSearch,
+} from 'react-icons/fa';
+import { BiLogoTypescript } from 'react-icons/bi';
+import {
+  SiAmazonaws,
+  SiCplusplus,
+  SiDocker,
+  SiFastapi,
+  SiGithubactions,
+  SiJavascript,
+  SiLangchain,
+  SiMongodb,
+  SiNextdotjs,
+  SiPostgresql,
+  SiTailwindcss,
+} from 'react-icons/si';
 import { arsenalData } from '../data/portfolioData';
 import './TechnicalArsenal.css';
+
+const skillIcons = {
+  'C++': SiCplusplus,
+  Python: FaPython,
+  JavaScript: SiJavascript,
+  TypeScript: BiLogoTypescript,
+  SQL: FaDatabase,
+  React: FaReact,
+  'Next.js': SiNextdotjs,
+  'HTML5 & CSS3': FaHtml5,
+  'Tailwind CSS': SiTailwindcss,
+  'Node.js': FaNodeJs,
+  'Express.js': FaServer,
+  FastAPI: SiFastapi,
+  'REST APIs': FaNetworkWired,
+  LangGraph: FaProjectDiagram,
+  LangChain: SiLangchain,
+  'Model Context Protocol (MCP)': FaPlug,
+  'Retrieval-Augmented Gen (RAG)': FaSearch,
+  'Multi-Agent Workflows': FaRobot,
+  'PostgreSQL & pgvector': SiPostgresql,
+  MongoDB: SiMongodb,
+  Docker: SiDocker,
+  'Git & GitHub Actions': SiGithubactions,
+  'AWS & Ansible': SiAmazonaws,
+  'Data Structures & Algorithms': FaCode,
+  'Object-Oriented Programming': FaCubes,
+  'Operating Systems': FaMicrochip,
+  DBMS: FaDatabase,
+  'Computer Networks': FaNetworkWired,
+};
+
+const skillColors = {
+  'C++': '#649ad2',
+  Python: '#3776ab',
+  JavaScript: '#f0db4f',
+  TypeScript: '#3178c6',
+  React: '#61dafb',
+  'Next.js': '#f0f0f0',
+  'HTML5 & CSS3': '#e34f26',
+  'Tailwind CSS': '#38bdf8',
+  'Node.js': '#68a063',
+  FastAPI: '#009688',
+  LangChain: '#78c5a4',
+  'PostgreSQL & pgvector': '#4169e1',
+  MongoDB: '#47a248',
+  Docker: '#2496ed',
+  'Git & GitHub Actions': '#f05032',
+  'AWS & Ansible': '#ff9900',
+};
 
 const TechnicalArsenal = () => {
   const [activeCategory, setActiveCategory] = useState(0);
   const [activeSkill, setActiveSkill] = useState(null);
-
   const currentCategory = arsenalData[activeCategory] || arsenalData[0];
 
   return (
     <section className="arsenal-section" id="stack">
       <div className="arsenal-container">
-        
-        {/* Section Header */}
         <div className="arsenal-header">
           <div className="section-label-group">
             <span className="label-accent-line" aria-hidden="true"></span>
@@ -20,15 +99,12 @@ const TechnicalArsenal = () => {
           </div>
           <h2 className="arsenal-headline">The stack behind the systems.</h2>
           <p className="arsenal-lede">
-            Curated technologies applied across distributed services, multi-agent reasoning, 
+            Curated technologies applied across distributed services, multi-agent reasoning,
             and real-world production engineering.
           </p>
         </div>
 
-        {/* Arsenal Interactive Grid */}
         <div className="arsenal-grid">
-          
-          {/* Category Tabs */}
           <div className="arsenal-tabs-col" role="tablist" aria-label="Technical skill categories">
             {arsenalData.map((cat, idx) => (
               <button
@@ -48,7 +124,6 @@ const TechnicalArsenal = () => {
             ))}
           </div>
 
-          {/* Active Category Skills Panel */}
           <div className="arsenal-skills-col">
             <div className="skills-panel-header">
               <span className="panel-kicker">{currentCategory.code}</span>
@@ -56,26 +131,33 @@ const TechnicalArsenal = () => {
             </div>
 
             <div className="skills-items-grid">
-              {currentCategory.skills.map((skill, sIdx) => (
-                <div 
-                  key={sIdx}
-                  tabIndex={0}
-                  className={`skill-item-card ${activeSkill === skill.name ? 'skill-item-active' : ''}`}
-                  onMouseEnter={() => setActiveSkill(skill.name)}
-                  onFocus={() => setActiveSkill(skill.name)}
-                >
-                  <div className="skill-card-top">
-                    <span className="skill-accent-dash">—</span>
-                    <h4 className="skill-name">{skill.name}</h4>
+              {currentCategory.skills.map((skill, sIdx) => {
+                const Icon = skillIcons[skill.name] || FaBrain;
+                return (
+                  <div
+                    key={sIdx}
+                    tabIndex={0}
+                    className={`skill-item-card ${activeSkill === skill.name ? 'skill-item-active' : ''}`}
+                    onMouseEnter={() => setActiveSkill(skill.name)}
+                    onFocus={() => setActiveSkill(skill.name)}
+                  >
+                    <div className="skill-card-top">
+                      <span
+                        className="skill-icon"
+                        style={{ color: skillColors[skill.name] || 'var(--amber)' }}
+                        aria-hidden="true"
+                      >
+                        <Icon />
+                      </span>
+                      <h4 className="skill-name">{skill.name}</h4>
+                    </div>
+                    <p className="skill-context">{skill.context}</p>
                   </div>
-                  <p className="skill-context">{skill.context}</p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
-
         </div>
-
       </div>
     </section>
   );
