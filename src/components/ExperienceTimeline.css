@@ -122,15 +122,18 @@
 }
 
 .timeline-logo-zscaler {
-  color: #ffffff;
-  background: #0875c9;
-  border-color: rgba(255, 255, 255, .14);
-  font-size: 28px;
+  background: #ffffff;
+  border-color: rgba(255, 255, 255, .2);
 }
 
-.timeline-logo-zscaler svg {
-  width: 30px;
-  height: 30px;
+.timeline-logo-zscaler img {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: auto;
+  height: 36px;
+  max-width: none;
+  transform: translateY(-50%);
 }
 
 .timeline-content {
@@ -227,9 +230,8 @@
     height: 58px;
   }
 
-  .timeline-logo-zscaler svg {
-    width: 33px;
-    height: 33px;
+  .timeline-logo-zscaler img {
+    height: 40px;
   }
 
   .timeline-content {
@@ -273,9 +275,8 @@
     font-size: 21px;
   }
 
-  .timeline-logo-zscaler svg {
-    width: 25px;
-    height: 25px;
+  .timeline-logo-zscaler img {
+    height: 30px;
   }
 
   .timeline-role {
