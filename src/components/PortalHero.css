@@ -996,3 +996,37 @@
     display: none !important;
   }
 }
+
+
+/* Mobile polish: larger portrait, extra separation, no photo tint or overlay. */
+@media (max-width: 768px) {
+  .portal-image-layer,
+  .portal-stage-open .portal-image-layer {
+    margin-bottom: 30px;
+  }
+
+  .portal-photo-frame,
+  .portal-stage-open .portal-photo-frame {
+    width: clamp(150px, 42vw, 180px);
+    height: clamp(150px, 42vw, 180px);
+    border-color: rgba(232, 145, 60, .62);
+    box-shadow: 0 0 0 5px rgba(232, 145, 60, .045), 0 10px 24px rgba(0, 0, 0, .2);
+    opacity: 1;
+  }
+
+  .portal-bg-img {
+    filter: none !important;
+    opacity: 1 !important;
+    object-fit: cover;
+    object-position: center 20%;
+    background: transparent;
+  }
+
+  .photo-frame-border {
+    border-color: transparent;
+  }
+
+  .portal-radial-veil {
+    background: radial-gradient(ellipse at center, transparent 56%, rgba(10, 12, 14, .16) 100%);
+  }
+}
