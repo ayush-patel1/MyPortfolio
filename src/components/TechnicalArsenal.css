@@ -268,3 +268,16 @@
   .skill-name { font-size: 15px; }
   .skill-context { font-size: 12px; line-height: 1.55; }
 }
+
+
+
+/* Unified, slightly smaller heading scale. */
+.arsenal-headline { font-size: clamp(31px, 4.2vw, 52px); }
+.panel-title { font-size: 25px; }
+.skill-name { font-size: 14px; }
+
+@media (max-width: 640px) {
+  .arsenal-headline { font-size: clamp(29px, 8vw, 40px); }
+  .panel-title { font-size: 21px; }
+  .skill-name { font-size: 14px; }
+}
