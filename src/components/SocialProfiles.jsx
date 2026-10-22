@@ -30,35 +30,29 @@ const SocialProfiles = () => (
         </div>
         <span className="profiles-index">06 / PROFILES</span>
       </div>
-
-      <nav className="profile-directory" aria-label="Social and coding profiles">
-        {codingProfiles.map((profile, index) => {
+      <div className="profiles-grid">
+        {codingProfiles.map((profile) => {
           const Icon = profileIcons[profile.name];
           return (
             <a
-              className="profile-link"
+              className="profile-card"
               href={profile.url}
               key={profile.name}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${profile.name}, ${profile.handle} (opens in a new tab)`}
             >
-              <span className="profile-link-number" aria-hidden="true">
-                {String(index + 1).padStart(2, '0')}
+              <span className="profile-icon" aria-hidden="true">{Icon && <Icon />}</span>
+              <span className="profile-copy">
+                <span className="profile-name">{profile.name}</span>
+                <span className="profile-handle">@{profile.handle}</span>
+                <span className="profile-metric">{profile.metric}</span>
               </span>
-              <span className={`profile-link-icon profile-brand-${index + 1}`} aria-hidden="true">
-                {Icon && <Icon />}
-              </span>
-              <span className="profile-link-copy">
-                <span className="profile-link-name">{profile.name}</span>
-                <span className="profile-link-handle">@{profile.handle}</span>
-                <span className="profile-link-description">{profile.metric}</span>
-              </span>
-              <span className="profile-link-arrow" aria-hidden="true">↗</span>
+              <span className="profile-arrow" aria-hidden="true">↗</span>
             </a>
           );
         })}
-      </nav>
+      </div>
     </div>
   </section>
 );
