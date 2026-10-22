@@ -806,3 +806,193 @@
     font-size: 36px !important;
   }
 }
+
+/* Mobile portrait layout: circular photo first, then the complete hero copy. */
+@media (max-width: 768px) {
+  .portal-section {
+    height: 100svh;
+    min-height: 590px;
+  }
+
+  .portal-stage {
+    height: 100svh;
+    min-height: 590px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    padding: max(68px, calc(env(safe-area-inset-top) + 58px)) 0 34px;
+    overflow: hidden;
+  }
+
+  .portal-panel,
+  .portal-dot {
+    display: none;
+  }
+
+  .portal-radial-veil {
+    z-index: 2;
+    background:
+      radial-gradient(ellipse at 50% 22%, rgba(232, 145, 60, .08) 0%, transparent 42%),
+      radial-gradient(ellipse at center, transparent 45%, rgba(10, 12, 14, .32) 100%);
+  }
+
+  .portal-image-layer,
+  .portal-stage-open .portal-image-layer {
+    position: relative;
+    inset: auto;
+    z-index: 4;
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    margin: 0 0 18px;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .portal-photo-frame,
+  .portal-stage-open .portal-photo-frame {
+    flex: 0 0 auto;
+    width: clamp(104px, 29vw, 132px);
+    height: clamp(104px, 29vw, 132px);
+    max-width: none;
+    max-height: none;
+    aspect-ratio: 1 / 1;
+    border: 1px solid rgba(232, 145, 60, .56);
+    border-radius: 50%;
+    overflow: hidden;
+    background: #11100f;
+    box-shadow:
+      0 0 0 5px rgba(232, 145, 60, .055),
+      0 12px 32px rgba(0, 0, 0, .36);
+    opacity: 1;
+  }
+
+  .portal-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 22%;
+    border-radius: 50%;
+  }
+
+  .photo-frame-border {
+    border-radius: 50%;
+    border-color: rgba(237, 231, 220, .15);
+  }
+
+  .portal-title-wrapper,
+  .portal-title-wrapper-open {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    z-index: 5;
+    display: flex;
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 620px;
+    margin: 0;
+    padding: 0 18px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    transform: none !important;
+    transition: none;
+  }
+
+  .portal-eyebrow {
+    justify-content: center;
+    gap: 7px;
+    margin: 0 0 11px;
+    font-size: 8px;
+    letter-spacing: .13em;
+    line-height: 1.5;
+    white-space: nowrap;
+  }
+
+  .portal-eyebrow::before {
+    width: 16px;
+  }
+
+  .portal-title,
+  .portal-title-wrapper-open .portal-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 2px;
+    font-size: clamp(35px, 10.6vw, 52px) !important;
+    line-height: .84;
+    letter-spacing: -.05em !important;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .portal-title-solid,
+  .portal-title-outline {
+    display: block;
+  }
+
+  .portal-title-outline {
+    -webkit-text-stroke-width: 1px;
+  }
+
+  .portal-headline,
+  .portal-title-wrapper-open .portal-headline {
+    display: block;
+    max-width: 32ch;
+    margin: 16px auto 0;
+    font-size: clamp(14px, 3.9vw, 17px);
+    line-height: 1.38;
+    letter-spacing: -.01em;
+    text-align: center;
+    text-shadow: none;
+  }
+
+  .portal-supporting,
+  .portal-title-wrapper-open .portal-supporting {
+    display: block;
+    max-width: 39ch;
+    margin: 9px auto 0;
+    font-size: 12px;
+    line-height: 1.55;
+    letter-spacing: 0;
+    text-align: center;
+    text-shadow: none;
+  }
+
+  .hero-ctas,
+  .portal-title-wrapper-open .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    margin: 17px 0 0;
+    padding: 0;
+  }
+
+  .hero-btn,
+  .portal-title-wrapper-open .hero-btn {
+    padding: 10px 12px;
+    font-size: 8px;
+    letter-spacing: .055em;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  .hero-btn-amber-outline,
+  .portal-title-wrapper-open .hero-btn-amber-outline {
+    display: none;
+  }
+
+  .hero-ticker,
+  .corner-meta {
+    display: none !important;
+  }
+}
