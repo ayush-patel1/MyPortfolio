@@ -197,3 +197,19 @@
     align-self: flex-start;
   }
 }
+
+
+/* Mobile cleanup: reduce vertical padding and keep recognition rows scannable. */
+
+@media (max-width: 640px) {
+  .recognition-section { padding: 76px 18px; }
+  .recognition-header { margin-bottom: 32px; }
+  .recognition-headline { font-size: clamp(32px, 9vw, 45px); line-height: 1.02; }
+  .achievements-list { margin-bottom: 0; }
+  .achievement-row { padding: 18px 0; gap: 8px; }
+  .ach-title { font-size: 16px; line-height: 1.35; }
+  .ach-desc { font-size: 12px; }
+  .ach-left { gap: 9px; }
+  .ach-year { font-size: 11px; }
+  .ach-badge { font-size: 9px; padding: 4px 8px; }
+}
