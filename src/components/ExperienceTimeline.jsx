@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGraduationCap, FaRobot } from 'react-icons/fa';
+import { FaGraduationCap } from 'react-icons/fa';
 import './ExperienceTimeline.css';
 
 const timelineItems = [
@@ -22,7 +22,7 @@ const timelineItems = [
     organization: 'National Institute of Technology, Raipur',
     role: 'B.Tech · Information Technology',
     detail: 'Undergraduate degree in Information Technology while contributing to software projects and campus technical communities.',
-    icon: 'school',
+    icon: 'nit',
   },
   {
     period: 'Nov 2023 – Aug 2024',
@@ -58,7 +58,7 @@ const timelineItems = [
     role: 'Software Development Intern',
     detail: 'Worked on AI-driven testbed provisioning, topology management, and infrastructure automation.',
     icon: 'zscaler',
-    technologies: ['Python', 'FastAPI', 'LangGraph', 'Ansible'],
+    technologies: ['Python', 'FastAPI', 'React.js', 'TypeScript', 'LangChain', 'LangGraph', 'Ansible', 'AWS', 'OCR'],
   },
   {
     period: 'Aug 2025 – Present',
@@ -71,6 +71,12 @@ const timelineItems = [
 ];
 
 function TimelineLogo({ type }) {
+  const imageSources = {
+    nit: '/images/timeline-nit.webp',
+    robotix: '/images/timeline-robotix.webp',
+    aavartan: '/images/timeline-aavartan.webp',
+  };
+
   if (type === 'zscaler') {
     return (
       <span className="timeline-logo timeline-logo-zscaler">
@@ -83,15 +89,16 @@ function TimelineLogo({ type }) {
     );
   }
 
-  if (type === 'school') {
-    return <span className="timeline-logo timeline-logo-school" aria-hidden="true"><FaGraduationCap /></span>;
+  if (imageSources[type]) {
+    const altText = type === 'nit' ? 'NIT Raipur logo' : type === 'robotix' ? 'RobotiX Club logo' : 'AAVARTAN logo';
+    return (
+      <span className={`timeline-logo timeline-logo-${type}`}>
+        <img src={imageSources[type]} alt={altText} loading="lazy" />
+      </span>
+    );
   }
 
-  if (type === 'robotix') {
-    return <span className="timeline-logo timeline-logo-robotix" aria-hidden="true"><FaRobot /></span>;
-  }
-
-  return <span className="timeline-logo timeline-logo-aavartan" aria-hidden="true">A</span>;
+  return <span className="timeline-logo timeline-logo-school" aria-hidden="true"><FaGraduationCap /></span>;
 }
 
 const ExperienceTimeline = () => (
