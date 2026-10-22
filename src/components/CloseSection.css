@@ -185,3 +185,19 @@
     padding: 0 16px;
   }
 }
+
+
+/* Mobile footer: keep only useful contact actions and compact metadata. */
+
+@media (max-width: 600px) {
+  .close-section { padding: 76px 0 0; }
+  .close-container { padding: 0 16px; }
+  .close-dispatch-grid { gap: 24px; margin-bottom: 42px; }
+  .close-headline { font-size: clamp(32px, 9vw, 45px); line-height: 1.03; margin-top: 12px; margin-bottom: 14px; }
+  .close-fineprint { font-size: 13px; line-height: 1.6; }
+  .close-actions-block { min-width: 0; width: 100%; gap: 9px; }
+  .close-btn { width: 100%; padding: 12px 14px; font-size: 10px; }
+  .footer-strip { gap: 15px; padding: 22px 0; }
+  .footer-val { font-size: 10px; line-height: 1.5; flex-wrap: wrap; overflow-wrap: anywhere; }
+  .close-wordmark-wrapper { display: none; }
+}
