@@ -25,32 +25,28 @@ const timelineItems = [
     icon: 'nit',
   },
   {
-    period: 'Nov 2023 – Aug 2024',
+    period: 'Nov 2023 – Oct 2025',
     organization: 'RobotiX Club, NIT Raipur',
-    role: 'Volunteer',
-    detail: 'Supported club activities and student-led technical events.',
+    role: 'Club Leadership · 3 roles',
+    detail: 'Progressed through volunteer, web, and event leadership responsibilities within the student club.',
     icon: 'robotix',
+    positions: [
+      { role: 'Volunteer', period: 'Nov 2023 – Aug 2024', detail: 'Supported club activities and student-led technical events.' },
+      { role: 'Web Executive', period: 'Aug 2024 – Sep 2025', detail: 'Worked on web experiences and digital platforms for club activities.' },
+      { role: 'Event Coordinator', period: 'Sep 2025 – Oct 2025', detail: 'Coordinated event execution and helped teams stay aligned.' },
+    ],
   },
   {
-    period: 'Jul 2024 – Sep 2025',
+    period: 'Jul 2024 – Present',
     organization: 'AAVARTAN, NIT Raipur',
-    role: 'Tech Executive',
-    detail: 'Contributed to the fest website and its digital infrastructure.',
+    role: 'Tech Executive → Tech Lead',
+    detail: 'Grew from contributing to the fest website to leading web development and delivery workflows.',
     icon: 'aavartan',
-  },
-  {
-    period: 'Aug 2024 – Sep 2025',
-    organization: 'RobotiX Club, NIT Raipur',
-    role: 'Web Executive',
-    detail: 'Worked on web experiences and digital platforms for club activities.',
-    icon: 'robotix',
-  },
-  {
-    period: 'Sep 2025 – Oct 2025',
-    organization: 'RobotiX Club, NIT Raipur',
-    role: 'Event Coordinator',
-    detail: 'Coordinated club event execution and helped teams stay aligned.',
-    icon: 'robotix',
+    current: true,
+    positions: [
+      { role: 'Tech Executive', period: 'Jul 2024 – Sep 2025', detail: 'Contributed to the fest website and its digital infrastructure.' },
+      { role: 'Tech Lead', period: 'Aug 2025 – Present', detail: 'Leading web development and improving the team’s delivery workflows.' },
+    ],
   },
   {
     period: 'May 2026 – Jul 2026',
@@ -59,14 +55,6 @@ const timelineItems = [
     detail: 'Worked on AI-driven testbed provisioning, topology management, and infrastructure automation.',
     icon: 'zscaler',
     technologies: ['Python', 'FastAPI', 'React.js', 'TypeScript', 'LangChain', 'LangGraph', 'Ansible', 'AWS', 'OCR'],
-  },
-  {
-    period: 'Aug 2025 – Present',
-    organization: 'AAVARTAN, NIT Raipur',
-    role: 'Tech Lead',
-    detail: 'Leading web development and improving the team’s delivery workflows.',
-    icon: 'aavartan',
-    current: true,
   },
 ];
 
@@ -166,6 +154,24 @@ const ExperienceTimeline = () => {
               <span className="timeline-expanded-index">{String(index + 1).padStart(2, '0')}</span>
               <div className="timeline-expanded-copy">
                 <p className="timeline-detail">{item.detail}</p>
+                {item.positions && (
+                  <div className="timeline-progression" aria-label="Role progression">
+                    {item.positions.map((position, positionIndex) => (
+                      <div className="timeline-progression-item" key={position.role}>
+                        <span className="timeline-progression-marker" aria-hidden="true">
+                          {String(positionIndex + 1).padStart(2, '0')}
+                        </span>
+                        <div className="timeline-progression-content">
+                          <div className="timeline-progression-heading">
+                            <span className="timeline-progression-role">{position.role}</span>
+                            <span className="timeline-progression-period">{position.period}</span>
+                          </div>
+                          <p className="timeline-progression-detail">{position.detail}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
                 {item.technologies && (
                   <div className="timeline-technologies" aria-label="Technologies used">
                     {item.technologies.map((technology) => (
