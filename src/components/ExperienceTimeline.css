@@ -416,46 +416,33 @@
 }
 
 
-/* Alternating organization timeline with a quieter editorial scale. */
-.experience-section {
-  padding: clamp(72px, 7.5vw, 108px) clamp(22px, 4vw, 56px);
-  background-image:
-    radial-gradient(ellipse at 14% 12%, rgba(232, 145, 60, .055), transparent 40%),
-    radial-gradient(ellipse at 88% 86%, rgba(232, 145, 60, .03), transparent 42%);
-}
-.experience-container { max-width: 1440px; }
-.experience-header { margin-bottom: clamp(32px, 4vw, 52px); }
-.experience-headline { font-size: clamp(29px, 3.5vw, 44px); }
-.experience-intro { font-size: 13px; margin-top: 12px; }
-.experience-timeline { padding: 8px 0; }
-.timeline-item { width: calc(50% - 40px); margin-bottom: 24px; }
-.timeline-item-left { margin-left: 0; margin-right: auto; }
-.timeline-item-right { margin-left: auto; margin-right: 0; }
-.timeline-summary { min-height: 102px; padding: 17px 18px; border-radius: 7px; }
-.timeline-role { font-size: clamp(15px, 1.3vw, 18px); }
-.timeline-node { width: 40px; height: 40px; right: -62px; top: 20px; }
-.timeline-item-right .timeline-node { left: -62px; right: auto; }
-.timeline-expanded { padding: 0 18px 18px; }
-.timeline-detail { font-size: 12px; line-height: 1.65; }
-.timeline-progression { margin-top: 16px; }
-.timeline-progression-item { padding: 12px 0; }
-
-@media (max-width: 900px) and (min-width: 641px) {
-  .experience-section { padding-inline: 26px; }
-  .timeline-item { width: calc(50% - 34px); }
-  .timeline-node { right: -51px; width: 36px; height: 36px; }
-  .timeline-item-right .timeline-node { left: -51px; right: auto; }
-  .timeline-summary { padding: 14px; }
+@media (max-width: 768px) {
+  .experience-section {
+    padding: 68px 22px;
+    background-image:
+      radial-gradient(ellipse at 14% 12%, rgba(232, 145, 60, .055), transparent 40%),
+      radial-gradient(ellipse at 88% 86%, rgba(232, 145, 60, .03), transparent 42%);
+  }
+  .experience-container { max-width: 100%; }
+  .experience-header { margin-bottom: 30px; }
+  .experience-headline { font-size: clamp(27px, 7vw, 35px); }
+  .experience-intro { font-size: 12px; margin-top: 10px; }
+  .timeline-summary { min-height: 94px; padding: 13px; }
+  .timeline-role { font-size: 14px; }
+  .timeline-organization { font-size: 11px; }
+  .timeline-period { font-size: 10px; }
+  .timeline-expanded { padding: 0 13px 14px; }
+  .timeline-detail { font-size: 12px; line-height: 1.6; }
+  .timeline-progression { margin-top: 14px; }
+  .timeline-progression-item { padding: 11px 0; }
 }
 @media (max-width: 640px) {
-  .experience-section { padding: 68px 22px; }
-  .experience-headline { font-size: clamp(27px, 7vw, 35px); }
+  .experience-section { padding: 62px 22px; }
   .timeline-item, .timeline-item-right { width: calc(100% - 52px); margin: 0 0 18px 52px; }
   .timeline-node, .timeline-item-right .timeline-node { left: -48px; right: auto; width: 34px; height: 34px; }
   .experience-timeline::before { left: 18px; }
-  .timeline-summary { padding: 13px; }
-  .timeline-expanded { padding: 0 13px 14px; }
+  .timeline-summary { padding: 12px; }
 }
 @media (max-width: 420px) {
-  .experience-section { padding: 58px 20px; }
+  .experience-section { padding: 54px 20px; }
 }
