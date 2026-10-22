@@ -4,7 +4,7 @@ export const personalInfo = {
   education: "B.Tech in Information Technology, NIT Raipur, 2023–2027",
   email: "ayush005rkt@gmail.com",
   github: "https://github.com/ayush-patel1",
-  linkedin: "https://www.linkedin.com/in/ayush-patel05/",
+  linkedin: "https://www.linkedin.com/in/ayush-patel1/",
   location: "NIT Raipur, India",
   coordinates: "21°14'N 81°38'E",
   positioning: "I build intelligent systems that connect AI, software, and infrastructure.",
@@ -348,8 +348,8 @@ export const codingProfiles = [
   {
     name: "LeetCode",
     handle: "ayush005rkt",
-    url: "https://leetcode.com/ayush005rkt",
-    metric: "800+ Problems Solved"
+    url: "https://leetcode.com/u/ayush005rkt/",
+    metric: "Competitive programming"
   },
   {
     name: "Codeforces",
@@ -367,6 +367,18 @@ export const codingProfiles = [
     name: "GitHub",
     handle: "ayush-patel1",
     url: "https://github.com/ayush-patel1",
-    metric: "Open Source Codebases"
+    metric: "Open source codebases"
+  },
+  {
+    name: "LinkedIn",
+    handle: "ayush-patel1",
+    url: "https://www.linkedin.com/in/ayush-patel1/",
+    metric: "Professional network"
+  },
+  {
+    name: "X / Twitter",
+    handle: "DevAyushX",
+    url: "https://x.com/DevAyushX",
+    metric: "Ideas and updates"
   }
 ];
