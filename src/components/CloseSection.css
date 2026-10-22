@@ -212,25 +212,21 @@
 }
 
 
-/* Contact area: consistent gutters and an understated hero-matched amber glow. */
-.close-section {
-  padding-top: clamp(80px, 8vw, 112px);
-  background-image:
-    radial-gradient(ellipse at 12% 16%, rgba(232, 145, 60, .06), transparent 42%),
-    radial-gradient(ellipse at 88% 88%, rgba(232, 145, 60, .035), transparent 42%);
-}
-.close-container { padding-inline: clamp(22px, 4vw, 56px); }
-.close-dispatch-grid { gap: clamp(24px, 4vw, 48px); margin-bottom: clamp(48px, 7vw, 88px); }
-.close-headline { font-size: clamp(29px, 3.5vw, 44px); }
-.close-btn { padding: 12px 20px; }
-.close-wordmark-wrapper { margin-top: 28px; }
-
 @media (max-width: 768px) {
-  .close-section { padding-top: 68px; }
+  .close-section {
+    padding-top: 68px;
+    background-image:
+      radial-gradient(ellipse at 12% 16%, rgba(232, 145, 60, .06), transparent 42%),
+      radial-gradient(ellipse at 88% 88%, rgba(232, 145, 60, .035), transparent 42%);
+  }
   .close-container { padding-inline: 22px; }
+  .close-dispatch-grid { gap: 22px; margin-bottom: 42px; }
   .close-headline { font-size: clamp(27px, 7vw, 35px); }
-  .close-dispatch-grid { margin-bottom: 42px; gap: 22px; }
+  .close-fineprint { font-size: 12px; line-height: 1.55; }
+  .close-actions-block { width: 100%; min-width: 0; gap: 9px; }
+  .close-btn { padding: 11px 14px; font-size: 10px; }
   .footer-strip { gap: 14px; padding: 20px 0; }
+  .footer-val { font-size: 10px; line-height: 1.5; overflow-wrap: anywhere; }
 }
 @media (max-width: 420px) {
   .close-section { padding-top: 58px; }
