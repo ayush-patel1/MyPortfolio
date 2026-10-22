@@ -21,7 +21,7 @@ export const projectsData = [
     category: "AGENTIC AI / BIOMEDICAL RESEARCH",
     stack: ["LangGraph", "FastAPI", "React", "Python", "RAG", "LLM APIs"],
     summary: "An exploratory research platform that searches PubMed, extracts text from research PDFs, coordinates specialized agents, and produces source-linked literature summaries and reports.",
-    image: "/images/project1.png",
+    image: "/images/neurorepurpose-cover.webp",
     links: {
       demo: "https://pharma-mine.netlify.app/",
       github: "https://github.com/ayush-patel1/pharma-agentic-ai",
