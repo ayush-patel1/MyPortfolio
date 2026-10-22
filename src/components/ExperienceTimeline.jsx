@@ -20,6 +20,14 @@ const timelineItems = [
     icon: 'school',
   },
   {
+    period: 'Aug 2023 – 2027 (Expected)',
+    organization: 'National Institute of Technology, Raipur',
+    role: 'B.Tech — Information Technology',
+    detail: 'Undergraduate studies alongside software engineering and technical community work.',
+    kind: 'education',
+    icon: 'school',
+  },
+  {
     period: 'Nov 2023 – Oct 2025',
     organization: 'RobotiX Club, NIT Raipur',
     role: 'Volunteer → Web Executive → Event Coordinator',
