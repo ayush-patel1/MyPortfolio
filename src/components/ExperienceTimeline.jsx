@@ -7,48 +7,56 @@ const timelineItems = [
     period: 'Mar 2020 – Apr 2021',
     organization: 'Nirmala Convent High School, Renukoot',
     role: 'Class 10',
-    detail: 'Grade: 98.6%',
-    kind: 'school',
+    detail: 'Scored 98.6%.',
     icon: 'school',
   },
   {
     period: 'Apr 2022 – Mar 2023',
     organization: 'Nirmala Convent High School, Renukoot',
     role: 'Class 12',
-    detail: 'Grade: 95.8%',
-    kind: 'school',
+    detail: 'Scored 95.8%.',
     icon: 'school',
   },
   {
     period: 'Aug 2023 – 2027 (Expected)',
     organization: 'National Institute of Technology, Raipur',
-    role: 'B.Tech — Information Technology',
-    detail: 'Undergraduate studies alongside software engineering and technical community work.',
-    kind: 'education',
+    role: 'B.Tech · Information Technology',
+    detail: 'Undergraduate degree in Information Technology while contributing to software projects and campus technical communities.',
     icon: 'school',
   },
   {
-    period: 'Nov 2023 – Oct 2025',
+    period: 'Nov 2023 – Aug 2024',
     organization: 'RobotiX Club, NIT Raipur',
-    role: 'Volunteer → Web Executive → Event Coordinator',
-    detail: 'Contributed to the club website, events, and student community.',
-    kind: 'club',
+    role: 'Volunteer',
+    detail: 'Supported club activities and student-led technical events.',
     icon: 'robotix',
   },
   {
     period: 'Jul 2024 – Sep 2025',
     organization: 'AAVARTAN, NIT Raipur',
     role: 'Tech Executive',
-    detail: 'Helped build and maintain the fest’s digital platforms.',
-    kind: 'work',
+    detail: 'Contributed to the fest website and its digital infrastructure.',
     icon: 'aavartan',
   },
   {
+    period: 'Aug 2024 – Sep 2025',
+    organization: 'RobotiX Club, NIT Raipur',
+    role: 'Web Executive',
+    detail: 'Worked on web experiences and digital platforms for club activities.',
+    icon: 'robotix',
+  },
+  {
+    period: 'Sep 2025 – Oct 2025',
+    organization: 'RobotiX Club, NIT Raipur',
+    role: 'Event Coordinator',
+    detail: 'Coordinated club event execution and helped teams stay aligned.',
+    icon: 'robotix',
+  },
+  {
     period: 'May 2026 – Jul 2026',
-    organization: 'Zscaler',
+    organization: 'Zscaler · Bengaluru, India',
     role: 'Software Development Intern',
-    detail: 'Worked on AI-driven testbed provisioning and infrastructure automation.',
-    kind: 'work',
+    detail: 'Worked on AI-driven testbed provisioning, topology management, and infrastructure automation.',
     icon: 'zscaler',
     technologies: ['Python', 'FastAPI', 'LangGraph', 'Ansible'],
   },
@@ -56,8 +64,7 @@ const timelineItems = [
     period: 'Aug 2025 – Present',
     organization: 'AAVARTAN, NIT Raipur',
     role: 'Tech Lead',
-    detail: 'Leading web development and improving delivery workflows.',
-    kind: 'current',
+    detail: 'Leading web development and improving the team’s delivery workflows.',
     icon: 'aavartan',
     current: true,
   },
@@ -65,7 +72,15 @@ const timelineItems = [
 
 function TimelineLogo({ type }) {
   if (type === 'zscaler') {
-    return <span className="timeline-logo timeline-logo-zscaler" aria-label="Zscaler"><img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Zscaler_logo.png" alt="Zscaler logo" loading="lazy" /></span>;
+    return (
+      <span className="timeline-logo timeline-logo-zscaler">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/2/29/Zscaler_logo.png"
+          alt="Zscaler"
+          loading="lazy"
+        />
+      </span>
+    );
   }
 
   if (type === 'school') {
@@ -85,36 +100,47 @@ const ExperienceTimeline = () => (
       <div className="experience-header">
         <div className="section-label-group">
           <span className="label-accent-line" aria-hidden="true"></span>
-          <span className="label-caps">02 / EXPERIENCE & EDUCATION</span>
+          <span className="label-caps">02 / EXPERIENCE &amp; EDUCATION</span>
         </div>
-        <h2 className="experience-headline" id="experience-title">Experience & Education</h2>
+        <h2 className="experience-headline" id="experience-title">Experience &amp; Education</h2>
         <p className="experience-intro">
           Academic milestones, campus leadership, and industry experience.
         </p>
       </div>
 
       <div className="experience-timeline">
-        {timelineItems.map((item) => (
-          <article className={`timeline-item ${item.current ? 'timeline-item-current' : ''}`} key={`${item.organization}-${item.role}`}>
-            <span className="timeline-node" aria-hidden="true" />
-            <TimelineLogo type={item.icon} />
-            <div className="timeline-content">
-              <div className="timeline-topline">
-                <span className="timeline-period">{item.period}</span>
-                {item.current && <span className="timeline-current-label">CURRENT</span>}
+        {timelineItems.map((item, index) => (
+          <details
+            className={`timeline-item ${item.current ? 'timeline-item-current' : ''}`}
+            key={`${item.organization}-${item.role}`}
+          >
+            <summary className="timeline-summary">
+              <span className="timeline-period">{item.period}</span>
+              <span className="timeline-entry-main">
+                <TimelineLogo type={item.icon} />
+                <span className="timeline-entry-copy">
+                  <span className="timeline-role">{item.role}</span>
+                  <span className="timeline-organization">{item.organization}</span>
+                </span>
+              </span>
+              <span className="timeline-toggle" aria-hidden="true"></span>
+            </summary>
+
+            <div className="timeline-expanded">
+              <span className="timeline-expanded-index">{String(index + 1).padStart(2, '0')}</span>
+              <div className="timeline-expanded-copy">
+                <p className="timeline-detail">{item.detail}</p>
+                {item.technologies && (
+                  <div className="timeline-technologies" aria-label="Technologies used">
+                    {item.technologies.map((technology) => (
+                      <span key={technology}>{technology}</span>
+                    ))}
+                  </div>
+                )}
               </div>
-              <h3 className="timeline-role">{item.role}</h3>
-              <p className="timeline-organization">{item.organization}</p>
-              <p className="timeline-detail">{item.detail}</p>
-              {item.technologies && (
-                <div className="timeline-technologies" aria-label="Technologies used">
-                  {item.technologies.map((technology) => (
-                    <span key={technology}>{technology}</span>
-                  ))}
-                </div>
-              )}
+              {item.current && <span className="timeline-current-label">CURRENT POSITION</span>}
             </div>
-          </article>
+          </details>
         ))}
       </div>
     </div>
