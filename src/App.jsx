@@ -7,6 +7,7 @@ import AboutMindset from './components/AboutMindset';
 import ThrowableDeck from './components/ThrowableDeck';
 import ExperienceTimeline from './components/ExperienceTimeline';
 import TechnicalArsenal from './components/TechnicalArsenal';
+import SocialProfiles from './components/SocialProfiles';
 import RecognitionSection from './components/RecognitionSection';
 import CloseSection from './components/CloseSection';
 import CaseStudy from './pages/CaseStudy';
@@ -30,10 +31,13 @@ function MainLandingPage() {
       {/* 5. Technical Arsenal: Tools of the Trade */}
       <TechnicalArsenal />
 
-      {/* 6. Recognition: Honours, Cohorts & Community */}
+      {/* 6. Social profiles */}
+      <SocialProfiles />
+
+      {/* 7. Recognition: Honours, Cohorts & Community */}
       <RecognitionSection />
 
-      {/* 7. Contact: Open to Interesting Problems & Grand Finale */}
+      {/* 8. Contact: Open to Interesting Problems & Grand Finale */}
       <CloseSection />
     </main>
   );
