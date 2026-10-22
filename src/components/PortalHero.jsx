@@ -91,7 +91,7 @@ const PortalHero = () => {
 
   return (
     <section className="portal-section" ref={heroRef} id="hero">
-      <div className="portal-stage">
+      <div className={`portal-stage ${isFullyOpen ? 'portal-stage-open' : ''}`}>
         
         {/* Layer 1: Whole-Length Photo Frame — 100% complete photo with zero cropping */}
         <div className="portal-image-layer">
@@ -138,13 +138,10 @@ const PortalHero = () => {
         {/* Layer 5: Hero Central Presentation */}
         <div 
           className={`portal-title-wrapper ${isFullyOpen ? 'portal-title-wrapper-open' : ''}`}
-          style={{
-            top: titleTop,
-            letterSpacing: letterSpacing
-          }}
+          style={{ top: titleTop }}
         >
           <p className="portal-eyebrow">FULL STACK ENGINEERING / AGENTIC AI</p>
-          <h1 className="portal-title">
+          <h1 className="portal-title" style={{ letterSpacing }}>
             <span className="portal-title-span">AYUSH PATEL</span>
             <span className="title-amber-dot">.</span>
           </h1>
