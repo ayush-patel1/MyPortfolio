@@ -217,3 +217,20 @@
     display: none;
   }
 }
+
+
+/* Mobile tidy-up: prioritize brand and essential actions on small screens. */
+
+@media (max-width: 500px) {
+  .nav-container { padding: 0 12px; }
+  .nav-actions { gap: 7px; }
+  .nav-wordmark { gap: 7px; font-size: 12px; }
+  .nav-monogram { width: 25px; height: 25px; }
+  .nav-cmd-btn { padding: 7px 8px; min-width: 30px; justify-content: center; }
+  .nav-kbd { display: none; }
+  .nav-icon-link { flex-basis: 32px; width: 32px; height: 32px; }
+  .nav-icon-link svg { width: 16px; height: 16px; }
+  .mobile-menu-toggle { padding: 4px 7px; }
+  .mobile-menu-drawer { padding: 18px 16px; gap: 10px; max-height: calc(100dvh - 60px); overflow-y: auto; }
+  .mobile-nav-link { font-size: 12px; padding: 7px 0; }
+}
