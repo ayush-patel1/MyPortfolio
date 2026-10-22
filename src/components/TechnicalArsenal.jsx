@@ -131,16 +131,18 @@ const TechnicalArsenal = () => {
                     key={skill.name}
                     className="skill-item-card"
                     style={{ '--skill-index': sIdx }}
-                    aria-label={skill.name}
                   >
-                    <span
-                      className="skill-icon"
-                      style={{ color: skillColors[skill.name] || 'var(--amber)' }}
-                      aria-hidden="true"
-                    >
-                      <Icon />
-                    </span>
-                    <h4 className="skill-name">{skill.name}</h4>
+                    <div className="skill-card-top">
+                      <span
+                        className="skill-icon"
+                        style={{ color: skillColors[skill.name] || 'var(--amber)' }}
+                        aria-hidden="true"
+                      >
+                        <Icon />
+                      </span>
+                      <h4 className="skill-name">{skill.name}</h4>
+                    </div>
+                    <p className="skill-context">{skill.context}</p>
                   </div>
                 );
               })}
