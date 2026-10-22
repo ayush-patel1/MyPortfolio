@@ -85,7 +85,6 @@ const skillColors = {
 
 const TechnicalArsenal = () => {
   const [activeCategory, setActiveCategory] = useState(0);
-  const [activeSkill, setActiveSkill] = useState(null);
   const currentCategory = arsenalData[activeCategory] || arsenalData[0];
 
   return (
@@ -97,10 +96,6 @@ const TechnicalArsenal = () => {
             <span className="label-caps">03 / TOOLS OF THE TRADE</span>
           </div>
           <h2 className="arsenal-headline">The stack behind the systems.</h2>
-          <p className="arsenal-lede">
-            Curated technologies applied across distributed services, multi-agent reasoning,
-            and real-world production engineering.
-          </p>
         </div>
 
         <div className="arsenal-grid">
@@ -113,7 +108,6 @@ const TechnicalArsenal = () => {
                 className={`arsenal-tab-btn ${activeCategory === idx ? 'arsenal-tab-active' : ''}`}
                 onClick={() => {
                   setActiveCategory(idx);
-                  setActiveSkill(null);
                 }}
               >
                 <span className="tab-code">{cat.code}</span>
@@ -134,23 +128,19 @@ const TechnicalArsenal = () => {
                 const Icon = skillIcons[skill.name] || FaBrain;
                 return (
                   <div
-                    key={sIdx}
-                    tabIndex={0}
-                    className={`skill-item-card ${activeSkill === skill.name ? 'skill-item-active' : ''}`}
-                    onMouseEnter={() => setActiveSkill(skill.name)}
-                    onFocus={() => setActiveSkill(skill.name)}
+                    key={skill.name}
+                    className="skill-item-card"
+                    style={{ '--skill-index': sIdx }}
+                    aria-label={skill.name}
                   >
-                    <div className="skill-card-top">
-                      <span
-                        className="skill-icon"
-                        style={{ color: skillColors[skill.name] || 'var(--amber)' }}
-                        aria-hidden="true"
-                      >
-                        <Icon />
-                      </span>
-                      <h4 className="skill-name">{skill.name}</h4>
-                    </div>
-                    <p className="skill-context">{skill.context}</p>
+                    <span
+                      className="skill-icon"
+                      style={{ color: skillColors[skill.name] || 'var(--amber)' }}
+                      aria-hidden="true"
+                    >
+                      <Icon />
+                    </span>
+                    <h4 className="skill-name">{skill.name}</h4>
                   </div>
                 );
               })}
