@@ -201,3 +201,12 @@
   .footer-val { font-size: 10px; line-height: 1.5; flex-wrap: wrap; overflow-wrap: anywhere; }
   .close-wordmark-wrapper { display: none; }
 }
+
+
+
+/* Unified, slightly smaller heading scale. */
+.close-headline { font-size: clamp(30px, 4.2vw, 56px); }
+
+@media (max-width: 600px) {
+  .close-headline { font-size: clamp(29px, 8vw, 40px); }
+}
