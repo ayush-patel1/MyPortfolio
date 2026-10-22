@@ -69,7 +69,7 @@ const PortalHero = () => {
 
   // Title placement:
   // Starts centered at 50% when closed, lowers gracefully across chest as curtain parts
-  const titleTop = openProgress >= 1 ? '50%' : `calc(50% + ${openProgress * 17}vh)`;
+  const titleTop = `calc(50% - ${openProgress * 3}vh)`;
   const letterSpacing = (-0.025 - openProgress * 0.015).toFixed(4) + 'em';
 
   const isFullyOpen = openProgress >= 1;
@@ -142,8 +142,8 @@ const PortalHero = () => {
         >
           <p className="portal-eyebrow">FULL STACK ENGINEERING / AGENTIC AI</p>
           <h1 className="portal-title" style={{ letterSpacing }}>
-            <span className="portal-title-span">AYUSH PATEL</span>
-            <span className="title-amber-dot">.</span>
+            <span className="portal-title-solid">AYUSH</span>
+            <span className="portal-title-outline">PATEL<span className="title-amber-dot">.</span></span>
           </h1>
           <p className="portal-headline">{personalInfo.heroHeadline}</p>
           <p className="portal-supporting">{personalInfo.heroSupporting}</p>
@@ -173,7 +173,29 @@ const PortalHero = () => {
           </div>
         </div>
 
-        {/* Layer 6: Corner Metadata & Status */}
+        {/* Layer 6: Minimal engineering ticker, limited to the hero stage */}
+        <div className="hero-ticker" aria-hidden="true">
+          <div className="hero-ticker-track">
+            <span className="hero-ticker-accent">INTELLIGENT SYSTEMS</span>
+            <span className="hero-ticker-separator">/</span>
+            <span>FULL-STACK ENGINEERING</span>
+            <span className="hero-ticker-separator">/</span>
+            <span>AGENTIC AI WORKFLOWS</span>
+            <span className="hero-ticker-separator">/</span>
+            <span>INFRASTRUCTURE AUTOMATION</span>
+            <span className="hero-ticker-separator">/</span>
+            <span className="hero-ticker-accent">INTELLIGENT SYSTEMS</span>
+            <span className="hero-ticker-separator">/</span>
+            <span>FULL-STACK ENGINEERING</span>
+            <span className="hero-ticker-separator">/</span>
+            <span>AGENTIC AI WORKFLOWS</span>
+            <span className="hero-ticker-separator">/</span>
+            <span>INFRASTRUCTURE AUTOMATION</span>
+            <span className="hero-ticker-separator">/</span>
+          </div>
+        </div>
+
+        {/* Layer 7: Corner Metadata & Status */}
         <div className="corner-meta corner-top-left">
           <span className="label-caps">PORTFOLIO / 027</span>
         </div>
