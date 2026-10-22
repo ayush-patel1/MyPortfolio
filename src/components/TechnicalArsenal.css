@@ -235,3 +235,36 @@
     font-size: 22px;
   }
 }
+
+
+/* Compact stack navigation for touchscreens. */
+
+@media (max-width: 640px) {
+  .arsenal-section { padding: 76px 16px; }
+  .arsenal-header { margin-bottom: 30px; }
+  .arsenal-headline { font-size: clamp(32px, 9vw, 46px); line-height: 1.02; }
+  .arsenal-lede { font-size: 13px; line-height: 1.6; }
+  .arsenal-grid { gap: 24px; }
+  .arsenal-tabs-col {
+    flex-direction: row;
+    gap: 4px;
+    padding: 6px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    border-radius: 5px;
+    scroll-snap-type: x proximity;
+  }
+  .arsenal-tabs-col::-webkit-scrollbar { display: none; }
+  .arsenal-tab-btn { flex: 0 0 auto; gap: 8px; padding: 10px 12px; scroll-snap-align: start; }
+  .tab-code { display: none; }
+  .tab-name { flex: 0 0 auto; margin-left: 0; font-size: 12px; }
+  .tab-indicator { display: none; }
+  .skills-panel-header { margin-bottom: 16px; padding-bottom: 14px; }
+  .panel-title { font-size: 23px; }
+  .skills-items-grid { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .skill-item-card { padding: 16px; }
+  .skill-card-top { gap: 10px; margin-bottom: 9px; }
+  .skill-name { font-size: 15px; }
+  .skill-context { font-size: 12px; line-height: 1.55; }
+}
