@@ -786,3 +786,23 @@
     animation: none;
   }
 }
+
+
+
+/* Typography scale refinement: keep the hero dramatic without letting the name dominate. */
+.portal-title { font-size: clamp(48px, 6.8vw, 108px) !important; }
+.portal-title-wrapper-open .portal-title { font-size: clamp(36px, 4.2vw, 58px) !important; }
+
+@media (max-width: 768px) {
+  .portal-title,
+  .portal-title-wrapper-open .portal-title {
+    font-size: clamp(39px, 11.5vw, 62px) !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .portal-title,
+  .portal-title-wrapper-open .portal-title {
+    font-size: 36px !important;
+  }
+}
