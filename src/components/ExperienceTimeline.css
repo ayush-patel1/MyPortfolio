@@ -401,3 +401,16 @@
     display: none;
   }
 }
+
+
+
+/* Keep experience headings aligned with the tighter global display scale. */
+.experience-headline { font-size: clamp(32px, 4.4vw, 56px); }
+.timeline-role { font-size: clamp(16px, 1.45vw, 20px); }
+.timeline-progression-role { font-size: 13px; }
+
+@media (max-width: 640px) {
+  .experience-headline { font-size: clamp(29px, 8vw, 40px); }
+  .timeline-role { font-size: 14px; }
+  .timeline-progression-role { font-size: 12px; }
+}
