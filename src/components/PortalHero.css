@@ -349,3 +349,129 @@
   .hero-ctas { flex-direction: column; width: 100%; }
   .hero-btn { width: min(100%, 245px); }
 }
+
+
+/* Open state: keep copy readable beside the portrait instead of stretching across it. */
+@media (min-width: 769px) {
+  .portal-stage-open .portal-image-layer {
+    justify-content: flex-end;
+    box-sizing: border-box;
+    padding: 0 clamp(24px, 6vw, 90px);
+  }
+
+  .portal-stage-open .portal-photo-frame {
+    width: min(34vw, 430px);
+    height: auto;
+    max-width: none;
+    max-height: 76vh;
+    aspect-ratio: 698 / 1024;
+  }
+
+  .portal-title-wrapper-open {
+    left: clamp(24px, 5.5vw, 84px);
+    width: min(52vw, 680px);
+    max-width: none;
+    padding: 0;
+    align-items: flex-start;
+    text-align: left;
+    transform: translateY(-50%);
+  }
+
+  .portal-title-wrapper-open .portal-eyebrow {
+    margin: 0 0 12px;
+    font-size: clamp(9px, .85vw, 11px);
+    letter-spacing: .18em;
+  }
+
+  .portal-title-wrapper-open .portal-title {
+    display: block;
+    max-width: 100%;
+    font-size: clamp(40px, 4.8vw, 66px);
+    line-height: .99;
+    letter-spacing: -.035em !important;
+    white-space: normal;
+    text-align: left;
+    overflow-wrap: normal;
+    text-shadow: 0 3px 24px rgba(0, 0, 0, .65);
+  }
+
+  .portal-title-wrapper-open .portal-headline {
+    max-width: 36ch;
+    margin-top: 18px;
+    font-size: clamp(17px, 1.7vw, 22px);
+    line-height: 1.38;
+    letter-spacing: -.01em;
+    text-shadow: none;
+  }
+
+  .portal-title-wrapper-open .portal-supporting {
+    max-width: 48ch;
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 1.65;
+    letter-spacing: 0;
+    text-shadow: none;
+  }
+
+  .portal-title-wrapper-open .hero-ctas {
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .portal-title-wrapper-open .hero-btn {
+    padding: 10px 16px;
+    font-size: 10px;
+    letter-spacing: .08em;
+    white-space: nowrap;
+  }
+
+  .portal-title-wrapper-open .hero-btn-amber-outline {
+    display: none;
+  }
+
+  .portal-stage-open .corner-meta {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+/* On phones, retain a compact centered composition with clean, readable tracking. */
+@media (max-width: 768px) {
+  .portal-title-wrapper-open {
+    left: 50%;
+    width: 100%;
+    max-width: 620px;
+    padding: 0 18px;
+    align-items: center;
+    text-align: center;
+    transform: translate(-50%, -50%);
+  }
+
+  .portal-title-wrapper-open .portal-title {
+    display: block;
+    width: 100%;
+    font-size: clamp(27px, 7.5vw, 43px);
+    line-height: 1;
+    letter-spacing: -.035em !important;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .portal-title-wrapper-open .portal-headline {
+    max-width: 31ch;
+    margin-top: 12px;
+    font-size: clamp(14px, 4vw, 18px);
+    line-height: 1.4;
+    letter-spacing: -.01em;
+  }
+
+  .portal-title-wrapper-open .hero-ctas {
+    justify-content: center;
+  }
+
+  .portal-stage-open .portal-photo-frame {
+    height: min(50vh, calc(100dvh - 160px));
+    max-width: 74vw;
+  }
+}
