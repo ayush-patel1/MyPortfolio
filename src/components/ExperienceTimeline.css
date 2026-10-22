@@ -259,3 +259,102 @@
   .timeline-organization { font-size: 11px; }
   .timeline-expanded { padding: 0 14px 16px; }
 }
+
+
+/* Organization role progression: compact ladder inside each expanded timeline entry. */
+.timeline-progression {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 22px;
+  border-top: 1px solid var(--hairline);
+}
+
+.timeline-progression-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 12px;
+  padding: 16px 0;
+}
+
+.timeline-progression-item + .timeline-progression-item {
+  border-top: 1px solid var(--hairline);
+}
+
+.timeline-progression-marker {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid var(--hairline-hover, rgba(237, 231, 220, .22));
+  background: var(--ground);
+  color: var(--teal);
+  font: 9px var(--font-mono, monospace);
+}
+
+.timeline-progression-content {
+  min-width: 0;
+}
+
+.timeline-progression-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+}
+
+.timeline-progression-role {
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.timeline-progression-period {
+  color: var(--amber);
+  font: 10px/1.6 var(--font-mono, monospace);
+}
+
+.timeline-progression-detail {
+  margin: 5px 0 0;
+  color: var(--secondary-ink);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .timeline-progression {
+    margin-top: 16px;
+  }
+
+  .timeline-progression-item {
+    grid-template-columns: 23px minmax(0, 1fr);
+    gap: 9px;
+    padding: 13px 0;
+  }
+
+  .timeline-progression-marker {
+    width: 22px;
+    height: 22px;
+    font-size: 8px;
+  }
+
+  .timeline-progression-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .timeline-progression-role {
+    font-size: 13px;
+  }
+
+  .timeline-progression-period {
+    font-size: 9px;
+  }
+}
