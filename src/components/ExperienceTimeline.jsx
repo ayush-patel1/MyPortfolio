@@ -27,7 +27,7 @@ const timelineItems = [
   {
     period: 'Nov 2023 – Oct 2025',
     organization: 'RobotiX Club, NIT Raipur',
-    role: 'Club Leadership · 3 roles',
+    role: 'Event Coordinator',
     detail: 'Progressed through volunteer, web, and event leadership responsibilities within the student club.',
     icon: 'robotix',
     positions: [
@@ -39,7 +39,7 @@ const timelineItems = [
   {
     period: 'Jul 2024 – Present',
     organization: 'AAVARTAN, NIT Raipur',
-    role: 'Tech Executive → Tech Lead',
+    role: 'Tech Lead',
     detail: 'Grew from contributing to the fest website to leading web development and delivery workflows.',
     icon: 'aavartan',
     current: true,
