@@ -217,3 +217,12 @@
   .about-tenets { display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 24px; }
   .tenet-item { font-size: 10px; padding: 9px 11px; }
 }
+
+
+
+/* Unified, slightly smaller heading scale. */
+.about-headline { font-size: clamp(30px, 4vw, 56px); }
+
+@media (max-width: 600px) {
+  .about-headline { font-size: clamp(29px, 8vw, 39px); }
+}
