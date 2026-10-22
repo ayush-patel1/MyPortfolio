@@ -391,3 +391,32 @@
     padding: 5px 8px;
   }
 }
+
+
+/* Mobile: prioritize the project card and remove the duplicate quick index. */
+
+@media (max-width: 640px) {
+  .releases-section { min-height: 0; padding: 76px 18px; }
+  .releases-container { grid-template-columns: minmax(0, 1fr); gap: 30px; align-items: start; }
+  .releases-headline { font-size: clamp(32px, 9vw, 45px); line-height: 1.03; margin-bottom: 16px; }
+  .releases-lede { font-size: 13px; line-height: 1.6; margin-bottom: 20px; }
+  .deck-controls-row { margin-bottom: 22px; gap: 8px; }
+  .deck-nav-btn { flex: 1; padding: 10px 8px; font-size: 9px; letter-spacing: .06em; }
+  .releases-quick-links { display: none; }
+  .card-deck { width: 100%; max-width: 420px; aspect-ratio: 0.83 / 1; }
+  .card-inner { padding: 14px; }
+  .card-visual-frame { height: clamp(100px, 30vw, 140px); margin-bottom: 12px; }
+  .card-title { font-size: 18px; margin-bottom: 6px; }
+  .card-summary { font-size: 12px; }
+  .card-tech-list { margin: 9px 0 10px; gap: 5px; }
+  .card-tech-pill { font-size: 9px; }
+  .card-actions-bar { padding-top: 10px; gap: 6px; }
+  .card-cta-btn { font-size: 9px; padding: 6px 8px; letter-spacing: .04em; }
+  .deck-meta-bar { margin-top: 14px; gap: 12px; }
+  .deck-hint-line { font-size: 9px; letter-spacing: .04em; line-height: 1.4; }
+  .deck-progress-dots { flex-shrink: 0; gap: 6px; }
+}
+@media (max-width: 360px) {
+  .deck-hint-line { max-width: 150px; }
+  .card-cta-ghost { display: none; }
+}
