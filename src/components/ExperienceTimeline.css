@@ -1,13 +1,13 @@
 .experience-section {
   position: relative;
-  padding: clamp(84px, 10vw, 144px) 32px;
+  padding: clamp(72px, 8vw, 120px) clamp(20px, 4vw, 76px);
   background: var(--ground);
   border-bottom: 1px solid var(--hairline);
 }
 
 .experience-container {
   width: 100%;
-  max-width: 1120px;
+  max-width: none;
   margin: 0 auto;
 }
 
