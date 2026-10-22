@@ -358,3 +358,46 @@
     font-size: 9px;
   }
 }
+
+
+/* A small live-status marker keeps the current role clear without extra label text. */
+.timeline-role-line,
+.timeline-progression-role-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+}
+
+.active-position-dot {
+  position: relative;
+  display: inline-block;
+  flex: 0 0 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 0 3px rgba(74, 222, 128, .12);
+  vertical-align: middle;
+}
+
+.active-position-dot::after {
+  position: absolute;
+  inset: -4px;
+  border: 1px solid rgba(74, 222, 128, .5);
+  border-radius: 50%;
+  content: "";
+  animation: active-position-pulse 2s ease-out infinite;
+}
+
+@keyframes active-position-pulse {
+  0% { opacity: .8; transform: scale(.72); }
+  100% { opacity: 0; transform: scale(1.9); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .active-position-dot::after {
+    animation: none;
+    display: none;
+  }
+}
