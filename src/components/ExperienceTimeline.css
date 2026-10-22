@@ -161,3 +161,36 @@
   .timeline-current-label { grid-column: 2; }
   .timeline-detail { font-size: 12px; }
 }
+
+
+/* Fit all supplied organization marks inside the circular timeline markers. */
+.timeline-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 3px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.timeline-logo-robotix,
+.timeline-logo-aavartan,
+.timeline-logo-nit {
+  background: #fff;
+  border: 1px solid rgba(255, 255, 255, .25);
+}
+
+.timeline-logo-robotix img,
+.timeline-logo-nit img {
+  padding: 2px;
+}
+
+.timeline-logo-aavartan img {
+  padding: 0;
+  object-fit: contain;
+}
+
+.timeline-logo-zscaler img {
+  padding: 5px;
+  object-fit: contain;
+}
