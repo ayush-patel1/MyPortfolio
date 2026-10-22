@@ -69,7 +69,7 @@ const PortalHero = () => {
 
   // Title placement:
   // Starts centered at 50% when closed, lowers gracefully across chest as curtain parts
-  const titleTop = `calc(50% + ${openProgress * 17}vh)`;
+  const titleTop = openProgress >= 1 ? '50%' : `calc(50% + ${openProgress * 17}vh)`;
   const letterSpacing = (-0.025 - openProgress * 0.015).toFixed(4) + 'em';
 
   const isFullyOpen = openProgress >= 1;
@@ -137,7 +137,7 @@ const PortalHero = () => {
 
         {/* Layer 5: Hero Central Presentation */}
         <div 
-          className="portal-title-wrapper"
+          className={`portal-title-wrapper ${isFullyOpen ? 'portal-title-wrapper-open' : ''}`}
           style={{
             top: titleTop,
             letterSpacing: letterSpacing
