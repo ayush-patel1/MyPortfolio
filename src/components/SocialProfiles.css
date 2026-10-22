@@ -190,3 +190,12 @@
   .profile-metric { font-size: 11px; line-height: 1.35; margin-top: 1px; }
   .profile-arrow { font-size: 13px; }
 }
+
+
+
+/* Unified, slightly smaller heading scale. */
+.profiles-heading-row h2 { font-size: clamp(31px, 4.2vw, 52px); }
+
+@media (max-width: 600px) {
+  .profiles-heading-row h2 { font-size: clamp(29px, 8vw, 40px); }
+}
