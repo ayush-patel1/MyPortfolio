@@ -32,7 +32,16 @@
   text-decoration: none;
   transition: opacity 0.2s ease;
   display: inline-flex;
-  align-items: baseline;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-monogram {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 7px;
+  flex: 0 0 auto;
 }
 
 .nav-wordmark:hover {
@@ -193,6 +202,9 @@
   .nav-container {
     padding: 0 16px;
   }
+
+  .nav-monogram { width: 28px; height: 28px; }
+  .nav-wordmark { font-size: 13px; }
 
   .nav-cmd-btn span {
     display: none;
