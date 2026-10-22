@@ -200,3 +200,20 @@
     padding: 100px 20px;
   }
 }
+
+
+/* Mobile simplification: tighten whitespace and hide decorative-only elements. */
+
+@media (max-width: 600px) {
+  .about-section { min-height: 0; padding: 76px 18px; }
+  .about-grid { display: block; }
+  .about-content-col { grid-column: auto; }
+  .about-outline-numeral { display: none; }
+  .section-label-group { gap: 9px; margin-bottom: 18px; }
+  .about-headline { font-size: clamp(32px, 9vw, 44px); line-height: 1.02; margin-bottom: 22px; }
+  .about-body { gap: 14px; }
+  .about-lead { font-size: 15px; line-height: 1.65; }
+  .about-sub { font-size: 13px; line-height: 1.65; }
+  .about-tenets { display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 24px; }
+  .tenet-item { font-size: 10px; padding: 9px 11px; }
+}
