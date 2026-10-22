@@ -232,3 +232,19 @@
     text-align: left;
   }
 }
+
+
+
+/* Shared spacing and amber atmosphere for roster/date views. */
+.roster-dates-section {
+  padding: clamp(72px, 7vw, 100px) clamp(22px, 4vw, 56px);
+  background-image:
+    radial-gradient(ellipse at 86% 14%, rgba(232, 145, 60, .055), transparent 44%),
+    radial-gradient(ellipse at 12% 88%, rgba(232, 145, 60, .03), transparent 40%);
+}
+.roster-dates-container { gap: clamp(40px, 5vw, 64px); }
+.roster-title { font-size: clamp(26px, 3.2vw, 42px); }
+@media (max-width: 600px) {
+  .roster-dates-section { padding: 60px 20px; }
+  .roster-dates-container { gap: 40px; }
+}
