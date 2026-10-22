@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { FaGraduationCap } from 'react-icons/fa';
 import './ExperienceTimeline.css';
 
@@ -101,8 +101,35 @@ function TimelineLogo({ type }) {
   return <span className="timeline-logo timeline-logo-school" aria-hidden="true"><FaGraduationCap /></span>;
 }
 
-const ExperienceTimeline = () => (
-  <section className="experience-section" id="experience" aria-labelledby="experience-title">
+const ExperienceTimeline = () => {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return undefined;
+
+    const items = section.querySelectorAll('.timeline-item');
+
+    if (!('IntersectionObserver' in window)) {
+      items.forEach((item) => item.classList.add('is-visible'));
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14, rootMargin: '0px 0px -6% 0px' });
+
+    items.forEach((item) => observer.observe(item));
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+  <section className="experience-section" id="experience" aria-labelledby="experience-title" ref={sectionRef}>
     <div className="experience-container">
       <div className="experience-header">
         <div className="section-label-group">
@@ -153,5 +180,6 @@ const ExperienceTimeline = () => (
     </div>
   </section>
 );
+};
 
 export default ExperienceTimeline;
