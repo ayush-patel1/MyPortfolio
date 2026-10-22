@@ -111,17 +111,18 @@ const ExperienceTimeline = () => (
       <div className="experience-timeline">
         {timelineItems.map((item, index) => (
           <details
-            className={`timeline-item ${item.current ? 'timeline-item-current' : ''}`}
+            className={`timeline-item ${index % 2 === 0 ? 'timeline-item-left' : 'timeline-item-right'} ${item.current ? 'timeline-item-current' : ''}`}
             key={`${item.organization}-${item.role}`}
           >
+            <span className="timeline-node" aria-hidden="true">
+              <TimelineLogo type={item.icon} />
+            </span>
+
             <summary className="timeline-summary">
               <span className="timeline-period">{item.period}</span>
-              <span className="timeline-entry-main">
-                <TimelineLogo type={item.icon} />
-                <span className="timeline-entry-copy">
-                  <span className="timeline-role">{item.role}</span>
-                  <span className="timeline-organization">{item.organization}</span>
-                </span>
+              <span className="timeline-entry-copy">
+                <span className="timeline-role">{item.role}</span>
+                <span className="timeline-organization">{item.organization}</span>
               </span>
               <span className="timeline-toggle" aria-hidden="true"></span>
             </summary>
