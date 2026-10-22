@@ -12,7 +12,10 @@
   width: 100vw;
   overflow: hidden;
   isolation: isolate;
-  background-color: var(--ground);
+  background:
+    radial-gradient(ellipse at 50% 44%, rgba(232, 145, 60, 0.10) 0%, rgba(232, 145, 60, 0.045) 23%, transparent 52%),
+    radial-gradient(ellipse at 82% 78%, rgba(232, 145, 60, 0.055) 0%, transparent 34%),
+    linear-gradient(135deg, #0d0e0e 0%, var(--ground) 47%, #100e0c 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -82,6 +85,23 @@
   background-color: var(--ground);
   z-index: 3;
   will-change: transform;
+}
+
+/* Subtle amber light is built into the curtains, so the closed hero is not flat black. */
+.portal-panel-left {
+  background:
+    radial-gradient(ellipse at 94% 43%, rgba(232, 145, 60, 0.13) 0%, rgba(232, 145, 60, 0.055) 20%, transparent 54%),
+    radial-gradient(ellipse at 19% 16%, rgba(232, 145, 60, 0.075) 0%, transparent 43%),
+    repeating-linear-gradient(132deg, transparent 0 54px, rgba(232, 145, 60, 0.012) 55px, transparent 56px),
+    linear-gradient(145deg, #11100f 0%, var(--ground) 68%);
+}
+
+.portal-panel-right {
+  background:
+    radial-gradient(ellipse at 6% 44%, rgba(232, 145, 60, 0.14) 0%, rgba(232, 145, 60, 0.05) 22%, transparent 56%),
+    radial-gradient(ellipse at 82% 84%, rgba(232, 145, 60, 0.075) 0%, transparent 45%),
+    repeating-linear-gradient(42deg, transparent 0 61px, rgba(232, 145, 60, 0.012) 62px, transparent 63px),
+    linear-gradient(225deg, #100f0e 0%, var(--ground) 70%);
 }
 
 .portal-panel-left {
