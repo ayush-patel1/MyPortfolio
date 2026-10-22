@@ -328,3 +328,24 @@
     display: none;
   }
 }
+
+
+/* Mobile: keep the opening cinematic, but remove redundant metadata and excess scroll runway. */
+
+@media (max-width: 768px) {
+  .portal-section { height: 175vh; }
+  .portal-photo-frame { height: min(58vh, calc(100dvh - 132px)); max-width: 82vw; }
+  .corner-meta { display: none; }
+  .portal-eyebrow { font-size: 9px; letter-spacing: .14em; margin-bottom: 7px; }
+  .portal-title { font-size: clamp(27px, 8.2vw, 43px); white-space: normal; }
+  .portal-headline { max-width: 90vw; font-size: clamp(14px, 4vw, 18px); line-height: 1.35; }
+  .hero-ctas { gap: 8px; margin-top: 16px; padding: 0 6px; }
+  .hero-btn { font-size: 9px; letter-spacing: .07em; padding: 10px 12px; }
+  .hero-btn-amber-outline { display: none; }
+}
+@media (max-width: 380px) {
+  .portal-title-wrapper { padding: 0 14px; }
+  .portal-title { font-size: 27px; }
+  .hero-ctas { flex-direction: column; width: 100%; }
+  .hero-btn { width: min(100%, 245px); }
+}
