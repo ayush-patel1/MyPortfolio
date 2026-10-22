@@ -241,3 +241,21 @@
     will-change: auto;
   }
 }
+
+
+/* Mobile cleanup: keep the alternating timeline readable without oversized gaps. */
+
+@media (max-width: 640px) {
+  .experience-section { padding: 72px 16px; }
+  .experience-header { margin-bottom: 30px; }
+  .experience-intro { font-size: 13px; margin-top: 10px; }
+  .experience-timeline { padding-top: 4px; }
+  .timeline-item, .timeline-item-right { margin-bottom: 18px; }
+  .timeline-summary { padding: 14px; gap: 7px 9px; }
+  .timeline-node, .timeline-item-right .timeline-node { width: 38px; height: 38px; left: -54px; }
+  .experience-timeline::before { left: 21px; }
+  .timeline-item, .timeline-item-right { width: calc(100% - 52px); margin-left: 52px; }
+  .timeline-role { font-size: 15px; }
+  .timeline-organization { font-size: 11px; }
+  .timeline-expanded { padding: 0 14px 16px; }
+}
