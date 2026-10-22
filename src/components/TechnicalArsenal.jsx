@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import {
   FaBrain,
-  FaCloud,
   FaCode,
   FaCubes,
   FaDatabase,
