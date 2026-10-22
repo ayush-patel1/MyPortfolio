@@ -18,7 +18,7 @@ import {
 } from 'react-icons/fa';
 import { BiLogoTypescript } from 'react-icons/bi';
 import {
-  SiAmazonaws,
+  SiAmazonwebservices,
   SiCplusplus,
   SiDocker,
   SiFastapi,
@@ -56,7 +56,7 @@ const skillIcons = {
   MongoDB: SiMongodb,
   Docker: SiDocker,
   'Git & GitHub Actions': SiGithubactions,
-  'AWS & Ansible': SiAmazonaws,
+  'AWS & Ansible': SiAmazonwebservices,
   'Data Structures & Algorithms': FaCode,
   'Object-Oriented Programming': FaCubes,
   'Operating Systems': FaMicrochip,
