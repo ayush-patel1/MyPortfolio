@@ -1,6 +1,5 @@
 import React from 'react';
 import { FaGraduationCap, FaRobot } from 'react-icons/fa';
-import { SiZscaler } from 'react-icons/si';
 import './ExperienceTimeline.css';
 
 const timelineItems = [
@@ -58,7 +57,7 @@ const timelineItems = [
 
 function TimelineLogo({ type }) {
   if (type === 'zscaler') {
-    return <span className="timeline-logo timeline-logo-zscaler" aria-label="Zscaler logo"><SiZscaler /></span>;
+    return <span className="timeline-logo timeline-logo-zscaler" aria-label="Zscaler"><img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Zscaler_logo.png" alt="Zscaler logo" loading="lazy" /></span>;
   }
 
   if (type === 'school') {
