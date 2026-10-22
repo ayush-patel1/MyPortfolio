@@ -1030,3 +1030,116 @@
     background: radial-gradient(ellipse at center, transparent 56%, rgba(10, 12, 14, .16) 100%);
   }
 }
+
+
+/* Mobile composition: portrait near the top, copy anchored near the bottom. */
+@media (max-width: 768px) {
+  .portal-section {
+    height: max(100svh, 700px);
+    min-height: 700px;
+  }
+
+  .portal-stage {
+    height: max(100svh, 700px);
+    min-height: 700px;
+    justify-content: space-between;
+    padding-top: max(76px, calc(env(safe-area-inset-top) + 68px));
+    padding-bottom: max(34px, calc(env(safe-area-inset-bottom) + 26px));
+    gap: 20px;
+  }
+
+  .portal-image-layer,
+  .portal-stage-open .portal-image-layer {
+    flex: 0 0 auto;
+    margin: 0;
+    align-self: stretch;
+    justify-content: center;
+  }
+
+  .portal-photo-frame,
+  .portal-stage-open .portal-photo-frame {
+    width: clamp(184px, 54vw, 226px);
+    height: clamp(184px, 54vw, 226px);
+    flex: 0 0 auto;
+    opacity: 1;
+    box-shadow:
+      0 0 0 6px rgba(232, 145, 60, .045),
+      0 16px 38px rgba(0, 0, 0, .24);
+  }
+
+  .portal-bg-img {
+    filter: none !important;
+    opacity: 1 !important;
+    object-fit: cover;
+    object-position: center 20%;
+  }
+
+  .portal-title-wrapper,
+  .portal-title-wrapper-open {
+    flex: 0 0 auto;
+    margin-top: auto;
+    margin-bottom: 0;
+    padding-bottom: 4px;
+  }
+
+  .portal-eyebrow {
+    margin-bottom: 13px;
+  }
+
+  .portal-title,
+  .portal-title-wrapper-open .portal-title {
+    font-size: clamp(37px, 10.8vw, 53px) !important;
+  }
+
+  .portal-headline,
+  .portal-title-wrapper-open .portal-headline {
+    margin-top: 17px;
+  }
+
+  .portal-supporting,
+  .portal-title-wrapper-open .portal-supporting {
+    margin-top: 10px;
+    max-width: 36ch;
+  }
+
+  .hero-ctas,
+  .portal-title-wrapper-open .hero-ctas {
+    margin-top: 18px;
+  }
+}
+
+@media (max-width: 390px) {
+  .portal-section,
+  .portal-stage {
+    height: max(100svh, 720px);
+    min-height: 720px;
+  }
+
+  .portal-stage {
+    padding-top: max(72px, calc(env(safe-area-inset-top) + 64px));
+    padding-bottom: max(28px, calc(env(safe-area-inset-bottom) + 22px));
+    gap: 14px;
+  }
+
+  .portal-photo-frame,
+  .portal-stage-open .portal-photo-frame {
+    width: clamp(176px, 52vw, 198px);
+    height: clamp(176px, 52vw, 198px);
+  }
+
+  .portal-title,
+  .portal-title-wrapper-open .portal-title {
+    font-size: clamp(35px, 10vw, 42px) !important;
+  }
+
+  .portal-headline,
+  .portal-title-wrapper-open .portal-headline {
+    margin-top: 14px;
+  }
+
+  .portal-supporting,
+  .portal-title-wrapper-open .portal-supporting {
+    font-size: 11px;
+    line-height: 1.48;
+  }
+}
