@@ -1143,3 +1143,32 @@
     line-height: 1.48;
   }
 }
+
+
+/* Final mobile spacing balance: equal outer margins and a slightly tighter center gap. */
+@media (max-width: 768px) {
+  .portal-stage {
+    padding-top: clamp(58px, 8vh, 64px);
+    padding-bottom: clamp(58px, 8vh, 64px);
+    gap: 10px;
+  }
+
+  .portal-image-layer,
+  .portal-stage-open .portal-image-layer {
+    margin-bottom: 0;
+  }
+
+  .portal-title-wrapper,
+  .portal-title-wrapper-open {
+    margin-top: auto;
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 390px) {
+  .portal-stage {
+    padding-top: 58px;
+    padding-bottom: 58px;
+    gap: 8px;
+  }
+}
