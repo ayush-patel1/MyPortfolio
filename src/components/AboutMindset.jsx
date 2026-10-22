@@ -27,16 +27,11 @@ const AboutMindset = () => {
   return (
     <section className="about-section" ref={sectionRef} id="about">
       <div className="about-container">
-        
-        {/* Outlined 01 Numeral Background Element */}
         <div className="about-outline-numeral" aria-hidden="true">
           01
         </div>
 
-        {/* 12-Column Asymmetric Grid */}
         <div className="about-grid">
-          
-          {/* Left Column (8 cols): Content */}
           <div className="about-content-col">
             <div className="section-label-group">
               <span className="label-accent-line" aria-hidden="true"></span>
@@ -60,7 +55,6 @@ const AboutMindset = () => {
               </p>
             </div>
 
-            {/* Core Tenets Checklist */}
             <div className="about-tenets">
               <div className="tenet-item">
                 <span className="tenet-bullet">/</span>
@@ -77,19 +71,16 @@ const AboutMindset = () => {
             </div>
           </div>
 
-          {/* Right Column (4 cols): Floating Graphic / Motif */}
           <div className="about-visual-col">
-            <div 
+            <div
               className="about-orb-card"
-              style={{
-                transform: `translateY(${scrollOffset * 0.4}px) rotate(${scrollOffset * 0.15}deg)`
-              }}
+              style={{ transform: `translateY(${scrollOffset * 0.4}px)` }}
             >
               <div className="orb-frame">
-                <img 
-                  src="/images/ayush-hero.jpg" 
-                  alt="Ayush Patel" 
-                  className="orb-img" 
+                <img
+                  src="/images/ayush-hero.jpg"
+                  alt="Ayush Patel"
+                  className="orb-img"
                 />
               </div>
               <div className="orb-badge">
@@ -98,9 +89,7 @@ const AboutMindset = () => {
               </div>
             </div>
           </div>
-
         </div>
-
       </div>
     </section>
   );
