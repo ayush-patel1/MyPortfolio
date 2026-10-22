@@ -45,7 +45,7 @@ const timelineItems = [
     current: true,
     positions: [
       { role: 'Tech Executive', period: 'Jul 2024 – Sep 2025', detail: 'Contributed to the fest website and its digital infrastructure.' },
-      { role: 'Tech Lead', period: 'Aug 2025 – Present', detail: 'Leading web development and improving the team’s delivery workflows.' },
+      { role: 'Tech Lead', period: 'Aug 2025 – Present', detail: 'Leading web development and improving the team’s delivery workflows.', active: true },
     ],
   },
   {
@@ -144,7 +144,10 @@ const ExperienceTimeline = () => {
               </span>
               <span className="timeline-period">{item.period}</span>
               <span className="timeline-entry-copy">
-                <span className="timeline-role">{item.role}</span>
+                <span className="timeline-role-line">
+                  <span className="timeline-role">{item.role}</span>
+                  {item.current && <span className="active-position-dot" aria-label="Current position" title="Current position" />}
+                </span>
                 <span className="timeline-organization">{item.organization}</span>
               </span>
               <span className="timeline-toggle" aria-hidden="true"></span>
@@ -163,7 +166,10 @@ const ExperienceTimeline = () => {
                         </span>
                         <div className="timeline-progression-content">
                           <div className="timeline-progression-heading">
-                            <span className="timeline-progression-role">{position.role}</span>
+                            <span className="timeline-progression-role-line">
+                              <span className="timeline-progression-role">{position.role}</span>
+                              {position.active && <span className="active-position-dot" aria-label="Current position" title="Current position" />}
+                            </span>
                             <span className="timeline-progression-period">{position.period}</span>
                           </div>
                           <p className="timeline-progression-detail">{position.detail}</p>
@@ -180,7 +186,6 @@ const ExperienceTimeline = () => {
                   </div>
                 )}
               </div>
-              {item.current && <span className="timeline-current-label">CURRENT POSITION</span>}
             </div>
           </details>
         ))}
