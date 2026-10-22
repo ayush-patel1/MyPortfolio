@@ -34,8 +34,9 @@ const Navigation = ({ onOpenCommandPalette }) => {
     <header className="nav-header">
       <div className="nav-container">
         {/* Left: Wordmark returns to top */}
-        <Link to="/" className="nav-wordmark" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          AYUSH PATEL<span className="nav-dot">.</span>
+        <Link to="/" className="nav-wordmark" aria-label="Ayush Patel home" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          <img src="/ap-monogram.svg" alt="" className="nav-monogram" />
+          <span>AYUSH PATEL<span className="nav-dot">.</span></span>
         </Link>
 
         {/* Right: Section Links */}
@@ -46,6 +47,7 @@ const Navigation = ({ onOpenCommandPalette }) => {
               <a href="#about" onClick={(e) => { e.preventDefault(); handleNavClick('about'); }} className="nav-link">ABOUT</a>
               <a href="#experience" onClick={(e) => { e.preventDefault(); handleNavClick('experience'); }} className="nav-link">EXPERIENCE</a>
               <a href="#stack" onClick={(e) => { e.preventDefault(); handleNavClick('stack'); }} className="nav-link">STACK</a>
+              <a href="#profiles" onClick={(e) => { e.preventDefault(); handleNavClick('profiles'); }} className="nav-link">PROFILES</a>
               <a href="#contact" onClick={(e) => { e.preventDefault(); handleNavClick('contact'); }} className="nav-link">CONTACT</a>
             </>
           ) : (
@@ -54,6 +56,7 @@ const Navigation = ({ onOpenCommandPalette }) => {
               <Link to="/#about" className="nav-link">ABOUT</Link>
               <Link to="/#experience" className="nav-link">EXPERIENCE</Link>
               <Link to="/#stack" className="nav-link">STACK</Link>
+              <Link to="/#profiles" className="nav-link">PROFILES</Link>
               <Link to="/#contact" className="nav-link">CONTACT</Link>
             </>
           )}
@@ -101,6 +104,7 @@ const Navigation = ({ onOpenCommandPalette }) => {
               <a href="#about" onClick={(e) => { e.preventDefault(); handleNavClick('about'); }} className="mobile-nav-link">02 / ABOUT</a>
               <a href="#experience" onClick={(e) => { e.preventDefault(); handleNavClick('experience'); }} className="mobile-nav-link">03 / EXPERIENCE</a>
               <a href="#stack" onClick={(e) => { e.preventDefault(); handleNavClick('stack'); }} className="mobile-nav-link">04 / STACK</a>
+              <a href="#profiles" onClick={(e) => { e.preventDefault(); handleNavClick('profiles'); }} className="mobile-nav-link">05 / PROFILES</a>
               <a href="#contact" onClick={(e) => { e.preventDefault(); handleNavClick('contact'); }} className="mobile-nav-link">05 / CONTACT</a>
             </>
           ) : (
@@ -109,6 +113,7 @@ const Navigation = ({ onOpenCommandPalette }) => {
               <Link to="/#about" onClick={() => setMobileMenuOpen(false)} className="mobile-nav-link">02 / ABOUT</Link>
               <Link to="/#experience" onClick={() => setMobileMenuOpen(false)} className="mobile-nav-link">03 / EXPERIENCE</Link>
               <Link to="/#stack" onClick={() => setMobileMenuOpen(false)} className="mobile-nav-link">04 / STACK</Link>
+              <Link to="/#profiles" onClick={() => setMobileMenuOpen(false)} className="mobile-nav-link">05 / PROFILES</Link>
               <Link to="/#contact" onClick={() => setMobileMenuOpen(false)} className="mobile-nav-link">05 / CONTACT</Link>
             </>
           )}
