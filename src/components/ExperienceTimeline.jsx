@@ -85,11 +85,11 @@ const ExperienceTimeline = () => (
       <div className="experience-header">
         <div className="section-label-group">
           <span className="label-accent-line" aria-hidden="true"></span>
-          <span className="label-caps">02 / THE JOURNEY SO FAR</span>
+          <span className="label-caps">02 / EXPERIENCE & EDUCATION</span>
         </div>
-        <h2 className="experience-headline" id="experience-title">From school to building real systems.</h2>
+        <h2 className="experience-headline" id="experience-title">Experience & Education</h2>
         <p className="experience-intro">
-          A few milestones from the classroom to engineering, community, and leadership.
+          Academic milestones, campus leadership, and industry experience.
         </p>
       </div>
 
