@@ -64,15 +64,6 @@ const Navigation = ({ onOpenCommandPalette }) => {
         </nav>
 
         <div className="nav-actions">
-          <button
-            className="nav-cmd-btn"
-            onClick={onOpenCommandPalette}
-            aria-label="Open Command Palette (Ctrl+K or Cmd+K)"
-          >
-            <span>COMMANDS</span>
-            <kbd className="nav-kbd">⌘K</kbd>
-          </button>
-
           <a
             href={personalInfo.github}
             target="_blank"
@@ -116,12 +107,6 @@ const Navigation = ({ onOpenCommandPalette }) => {
               <Link to="/#contact" onClick={() => setMobileMenuOpen(false)} className="mobile-nav-link">06 / CONTACT</Link>
             </>
           )}
-          <button
-            className="mobile-cmd-btn"
-            onClick={() => { setMobileMenuOpen(false); onOpenCommandPalette(); }}
-          >
-            COMMAND PALETTE (⌘K)
-          </button>
         </div>
       )}
     </header>
