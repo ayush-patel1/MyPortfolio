@@ -431,3 +431,33 @@
   .releases-headline { font-size: clamp(29px, 8vw, 40px); }
   .card-title { font-size: 16px; }
 }
+
+
+/* Selected work: even side gutters, compact cards, warm ambient highlight. */
+.releases-section {
+  min-height: auto;
+  padding: clamp(72px, 7.5vw, 108px) clamp(22px, 4vw, 56px);
+  background-image:
+    radial-gradient(ellipse at 88% 18%, rgba(232, 145, 60, .06), transparent 40%),
+    radial-gradient(ellipse at 12% 82%, rgba(232, 145, 60, .028), transparent 38%);
+}
+.releases-container { gap: clamp(28px, 4vw, 56px); }
+.releases-headline { font-size: clamp(29px, 3.5vw, 44px); margin-bottom: 18px; }
+.releases-lede { font-size: 13px; line-height: 1.65; margin-bottom: 24px; }
+.card-deck { max-width: 460px; }
+.card-inner { padding: 18px; }
+.card-visual-frame { margin-bottom: 14px; }
+.card-title { font-size: 17px; }
+.card-summary { font-size: 12px; line-height: 1.55; }
+
+@media (max-width: 768px) {
+  .releases-section { padding: 68px 22px; }
+  .releases-container { gap: 26px; }
+  .releases-headline { font-size: clamp(27px, 7vw, 35px); }
+  .card-deck { max-width: 400px; }
+  .card-inner { padding: 14px; }
+}
+@media (max-width: 420px) {
+  .releases-section { padding: 58px 20px; }
+  .card-deck { aspect-ratio: .9 / 1; }
+}
