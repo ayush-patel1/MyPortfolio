@@ -1,22 +1,14 @@
 import React from 'react';
-import {
-  SiLeetcode,
-  SiCodeforces,
-  SiCodechef,
-  SiGithub,
-  SiLinkedin,
-  SiX,
-} from 'react-icons/si';
 import { codingProfiles } from '../data/portfolioData';
 import './SocialProfiles.css';
 
-const profileIcons = {
-  LeetCode: SiLeetcode,
-  Codeforces: SiCodeforces,
-  CodeChef: SiCodechef,
-  GitHub: SiGithub,
-  LinkedIn: SiLinkedin,
-  'X / Twitter': SiX,
+const profileIconFiles = {
+  LeetCode: 'leetcode',
+  Codeforces: 'codeforces',
+  CodeChef: 'codechef',
+  GitHub: 'github',
+  LinkedIn: 'linkedin',
+  'X / Twitter': 'x',
 };
 
 const SocialProfiles = () => (
@@ -32,7 +24,7 @@ const SocialProfiles = () => (
       </div>
       <div className="profiles-grid">
         {codingProfiles.map((profile) => {
-          const Icon = profileIcons[profile.name];
+          const iconFile = profileIconFiles[profile.name];
           return (
             <a
               className="profile-card"
@@ -40,12 +32,13 @@ const SocialProfiles = () => (
               key={profile.name}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`${profile.name}, ${profile.handle} (opens in a new tab)`}
+              aria-label={`${profile.name} profile (opens in a new tab)`}
             >
-              <span className="profile-icon" aria-hidden="true">{Icon && <Icon />}</span>
+              <span className="profile-icon" aria-hidden="true">
+                {iconFile && <img src={`/brand-icons/${iconFile}.svg`} alt="" width="25" height="25" loading="lazy" />}
+              </span>
               <span className="profile-copy">
                 <span className="profile-name">{profile.name}</span>
-                <span className="profile-handle">@{profile.handle}</span>
                 <span className="profile-metric">{profile.metric}</span>
               </span>
               <span className="profile-arrow" aria-hidden="true">↗</span>
