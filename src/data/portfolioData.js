@@ -10,7 +10,7 @@ export const personalInfo = {
   positioning: "I build intelligent systems that connect AI, software, and infrastructure.",
   heroHeadline: "Engineering intelligent systems. Building what’s next.",
   heroSupporting: "From full-stack products to multi-agent AI workflows, I turn complex engineering problems into usable, reliable software.",
-  resumeUrl: "/Ayush_Patel_Resume.pdf"
+  resumeUrl: "https://drive.google.com/file/d/1O4VAMpWOqkBi31fgR8_xu6L1Yu5iFdD9/view?usp=sharing"
 };
 
 export const projectsData = [
