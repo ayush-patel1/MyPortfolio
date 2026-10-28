@@ -3742,3 +3742,291 @@ footer[id] {
     width: calc(50% - 4px);
   }
 }
+
+
+/* Compact the project navigation and case-study action buttons. */
+.deck-controls-row {
+  gap: 9px;
+  margin-bottom: 25px;
+}
+
+.deck-nav-btn {
+  min-height: 37px;
+  padding: 7px 14px;
+  border-radius: var(--dp-radius-control);
+  font-size: 15px;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+.card-actions-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+}
+
+.card-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 7px 11px;
+  border-width: 1.25px;
+  border-radius: 7px 3px 10px 4px;
+  font-size: 14px;
+  line-height: 1.05;
+  letter-spacing: 0;
+  white-space: normal;
+}
+
+.cs-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 37px;
+  padding: 8px 13px;
+  border-width: 1.25px;
+  border-radius: 7px 3px 10px 4px;
+  font-size: 14px;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+@media (max-width: 640px) {
+  .deck-nav-btn {
+    min-height: 35px;
+    padding: 7px 11px;
+    font-size: 14px;
+  }
+
+  .card-actions-bar {
+    gap: 6px;
+  }
+
+  .card-cta-btn {
+    min-height: 32px;
+    padding: 6px 9px;
+    font-size: 12px;
+  }
+
+  .cs-btn {
+    min-height: 35px;
+    padding: 7px 10px;
+    font-size: 12.5px;
+  }
+}
+
+/* Timeline: keep organization logos inside the card, not floating over its rail. */
+.timeline-node {
+  top: 22px;
+  left: 20px;
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 2px solid var(--dp-color-ground);
+  border-radius: 50%;
+  background: var(--dp-color-accent);
+  box-shadow: 0 0 0 1px rgba(81, 77, 68, .38);
+}
+
+.timeline-card-logo {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 28px;
+  width: 28px;
+  height: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(81, 77, 68, .25);
+  border-radius: 5px 3px 7px 4px;
+  background: #fffdf7;
+}
+
+.timeline-card-logo .timeline-logo {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.timeline-card-logo .timeline-logo img {
+  width: 100%;
+  height: 100%;
+  padding: 2px;
+  object-fit: contain;
+  border-radius: 0;
+}
+
+.timeline-role-line {
+  align-items: center;
+  gap: 8px;
+}
+
+.timeline-role {
+  font-size: clamp(18px, 1.6vw, 23px);
+  line-height: 1.15;
+}
+
+.timeline-summary {
+  gap: 6px 12px;
+  padding: clamp(13px, 1.6vw, 20px);
+}
+
+.timeline-item[open] .timeline-summary {
+  border-bottom-color: transparent !important;
+  border-radius: 8px 4px 0 0;
+  box-shadow: none;
+}
+
+.timeline-item[open] .timeline-expanded {
+  display: block;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+  margin-top: -1px;
+  padding: 0 clamp(13px, 1.6vw, 20px) 17px;
+  border-width: 1px;
+  border-top: 0 !important;
+  border-color: rgba(52, 76, 105, .48);
+  border-radius: 0 0 8px 4px;
+  box-shadow: 3px 3px 0 rgba(56, 53, 47, .07);
+}
+
+.timeline-expanded-copy {
+  display: block;
+  min-width: 0;
+  padding: 0;
+}
+
+.timeline-detail {
+  margin: 0;
+  padding: 0;
+  border: 0 !important;
+  border-top: 0 !important;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.timeline-progression {
+  margin-top: 14px;
+  border-top: 1px dashed rgba(81, 77, 68, .28);
+}
+
+.timeline-progression-item {
+  grid-template-columns: 22px minmax(0, 1fr);
+  gap: 9px;
+  padding: 12px 0;
+}
+
+.timeline-progression-marker {
+  width: 21px;
+  height: 21px;
+  font-size: 9px;
+}
+
+.timeline-progression-role {
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.timeline-progression-period {
+  font-size: 12px;
+}
+
+.timeline-progression-detail {
+  margin-top: 4px;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.timeline-site-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 9px;
+}
+
+.timeline-site-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 30px;
+  padding: 5px 9px;
+  border: 1px solid rgba(52, 76, 105, .45);
+  border-radius: 6px 3px 8px 4px;
+  background: rgba(240, 223, 160, .35);
+  color: var(--dp-color-annotation);
+  font: 700 13px/1.2 var(--dp-typography-reading-face);
+  text-decoration: none;
+}
+
+.timeline-site-links a:hover {
+  background: var(--dp-color-highlight);
+  border-color: var(--dp-color-accent);
+  color: var(--dp-color-accent);
+}
+
+@media (max-width: 640px) {
+  .experience-timeline::before {
+    left: 18px;
+  }
+
+  .timeline-node {
+    left: 13px;
+    top: 18px;
+    width: 10px;
+    height: 10px;
+  }
+
+  .timeline-item,
+  .timeline-item-right {
+    padding-left: 47px;
+  }
+
+  .timeline-summary {
+    padding: 12px;
+    grid-template-columns: minmax(0, 1fr) 20px;
+    gap: 7px 8px;
+  }
+
+  .timeline-card-logo {
+    flex-basis: 24px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .timeline-role {
+    font-size: 17px;
+  }
+
+  .timeline-item[open] .timeline-expanded {
+    padding: 0 12px 14px;
+  }
+
+  .timeline-detail {
+    font-size: 13.5px;
+    line-height: 1.45;
+  }
+
+  .timeline-progression-role {
+    font-size: 16px;
+  }
+
+  .timeline-progression-detail {
+    font-size: 13px;
+  }
+
+  .timeline-site-links a {
+    min-height: 28px;
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline-summary:hover {
+    transform: none;
+  }
+}
