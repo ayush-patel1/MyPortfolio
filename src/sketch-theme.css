@@ -4304,3 +4304,24 @@ footer[id] {
     transform: none;
   }
 }
+
+
+/* Real brand SVGs scale consistently inside the social directory icon mounts. */
+.profile-icon img {
+  display: block;
+  width: 27px;
+  height: 27px;
+  max-width: none;
+  object-fit: contain;
+}
+
+.profile-handle {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+  .profile-icon img {
+    width: 24px;
+    height: 24px;
+  }
+}
