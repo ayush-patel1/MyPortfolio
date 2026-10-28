@@ -61,11 +61,11 @@ const AboutMindset = () => {
                 <span className="tenet-text">Deterministic Orchestration</span>
               </div>
               <div className="tenet-item">
-                <span className="tenet-bullet">/</span>
+                <span className="tenet-bullet" aria-hidden="true">✳</span>
                 <span className="tenet-text">Defensive System Boundaries</span>
               </div>
               <div className="tenet-item">
-                <span className="tenet-bullet">/</span>
+                <span className="tenet-bullet" aria-hidden="true">✳</span>
                 <span className="tenet-text">Observable AI Reasoning</span>
               </div>
             </div>
