@@ -142,7 +142,6 @@ const TechnicalArsenal = () => {
                       </span>
                       <h4 className="skill-name">{skill.name}</h4>
                     </div>
-                    <p className="skill-context">{skill.context}</p>
                   </div>
                 );
               })}
