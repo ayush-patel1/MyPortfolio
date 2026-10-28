@@ -3,39 +3,16 @@ import { FaGraduationCap } from 'react-icons/fa';
 import './ExperienceTimeline.css';
 
 const timelineItems = [
+
   {
-    period: 'Mar 2020 – Apr 2021',
-    organization: 'Nirmala Convent High School, Renukoot',
-    role: 'Class 10',
-    detail: 'Scored 98.6%.',
-    icon: 'school',
+    period: 'May 2026 – Jul 2026',
+    organization: 'Zscaler · Bengaluru, India',
+    role: 'Software Development Intern',
+    detail: 'Worked on AI-driven testbed provisioning, topology management, and infrastructure automation.',
+    icon: 'zscaler',
+    technologies: ['Python', 'FastAPI', 'React.js', 'TypeScript', 'LangChain', 'LangGraph', 'Ansible', 'AWS', 'OCR'],
   },
-  {
-    period: 'Apr 2022 – Mar 2023',
-    organization: 'Nirmala Convent High School, Renukoot',
-    role: 'Class 12',
-    detail: 'Scored 95.8%.',
-    icon: 'school',
-  },
-  {
-    period: 'Aug 2023 – 2027 (Expected)',
-    organization: 'National Institute of Technology, Raipur',
-    role: 'B.Tech · Information Technology',
-    detail: 'Undergraduate degree in Information Technology while contributing to software projects and campus technical communities.',
-    icon: 'nit',
-  },
-  {
-    period: 'Nov 2023 – Oct 2025',
-    organization: 'RobotiX Club, NIT Raipur',
-    role: 'Event Coordinator',
-    detail: 'Progressed through volunteer, web, and event leadership responsibilities within the student club.',
-    icon: 'robotix',
-    positions: [
-      { role: 'Volunteer', period: 'Nov 2023 – Aug 2024', detail: 'Supported club activities and student-led technical events.' },
-      { role: 'Web Executive', period: 'Aug 2024 – Sep 2025', detail: 'Worked on web experiences and digital platforms for club activities.' },
-      { role: 'Event Coordinator', period: 'Sep 2025 – Oct 2025', detail: 'Coordinated event execution and helped teams stay aligned.' },
-    ],
-  },
+
   {
     period: 'Jul 2024 – Present',
     organization: 'AAVARTAN, NIT Raipur',
@@ -57,14 +34,44 @@ const timelineItems = [
       },
     ],
   },
+
   {
-    period: 'May 2026 – Jul 2026',
-    organization: 'Zscaler · Bengaluru, India',
-    role: 'Software Development Intern',
-    detail: 'Worked on AI-driven testbed provisioning, topology management, and infrastructure automation.',
-    icon: 'zscaler',
-    technologies: ['Python', 'FastAPI', 'React.js', 'TypeScript', 'LangChain', 'LangGraph', 'Ansible', 'AWS', 'OCR'],
+    period: 'Nov 2023 – Oct 2025',
+    organization: 'RobotiX Club, NIT Raipur',
+    role: 'Event Coordinator',
+    detail: 'Progressed through volunteer, web, and event leadership responsibilities within the student club.',
+    icon: 'robotix',
+    positions: [
+      { role: 'Volunteer', period: 'Nov 2023 – Aug 2024', detail: 'Supported club activities and student-led technical events.' },
+      { role: 'Web Executive', period: 'Aug 2024 – Sep 2025', detail: 'Worked on web experiences and digital platforms for club activities.' },
+      { role: 'Event Coordinator', period: 'Sep 2025 – Oct 2025', detail: 'Coordinated event execution and helped teams stay aligned.' },
+    ],
   },
+
+  {
+    period: 'Aug 2023 – 2027 (Expected)',
+    organization: 'National Institute of Technology, Raipur',
+    role: 'B.Tech · Information Technology',
+    detail: 'Undergraduate degree in Information Technology while contributing to software projects and campus technical communities.',
+    icon: 'nit',
+  },
+
+  {
+    period: 'Apr 2022 – Mar 2023',
+    organization: 'Nirmala Convent High School, Renukoot',
+    role: 'Class 12',
+    detail: 'Scored 95.8%.',
+    icon: 'school',
+  },
+
+  {
+    period: 'Mar 2020 – Apr 2021',
+    organization: 'Nirmala Convent High School, Renukoot',
+    role: 'Class 10',
+    detail: 'Scored 98.6%.',
+    icon: 'school',
+  },
+
 ];
 
 function TimelineLogo({ type }) {
