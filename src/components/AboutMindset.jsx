@@ -57,7 +57,7 @@ const AboutMindset = () => {
 
             <div className="about-tenets">
               <div className="tenet-item">
-                <span className="tenet-bullet">/</span>
+                <span className="tenet-bullet" aria-hidden="true">✳</span>
                 <span className="tenet-text">Deterministic Orchestration</span>
               </div>
               <div className="tenet-item">
@@ -82,10 +82,6 @@ const AboutMindset = () => {
                   alt="Ayush Patel"
                   className="orb-img"
                 />
-              </div>
-              <div className="orb-badge">
-                <span className="orb-badge-dot"></span>
-                <span className="label-caps">NIT RAIPUR &apos;27</span>
               </div>
             </div>
           </div>
