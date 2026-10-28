@@ -271,7 +271,6 @@ const ThrowableDeck = () => {
 
           {/* Hint Line & Progress Indicators */}
           <div className="deck-meta-bar">
-            <p className="deck-hint-line">SWIPE / DRAG SLEEVE OR USE ARROW KEYS [← / →]</p>
             <div className="deck-progress-dots" role="tablist" aria-label="Deck pagination">
               {projectsData.map((_, i) => (
                 <button
