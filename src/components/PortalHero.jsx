@@ -60,8 +60,6 @@ const PortalHero = () => {
   const rightPanelTransform = `translateX(${openProgress * 140}%)`;
 
   // Photo begins in dark moody grey-black and brightens into luminous grey-white as it opens
-  const photoBrightness = (0.38 + openProgress * 0.60).toFixed(2);
-  const photoContrast = (1.30 - openProgress * 0.18).toFixed(2);
 
   // Accent dots travel outward toward opposite corners
   const dot1Transform = `translate(calc(-50% - ${openProgress * 42}vw), calc(-50% - ${openProgress * 38}vh))`;
@@ -100,9 +98,7 @@ const PortalHero = () => {
               src="/images/ayush-hero.jpg" 
               alt="Ayush Patel" 
               className="portal-bg-img"
-              style={{
-                filter: `grayscale(100%) contrast(${photoContrast}) brightness(${photoBrightness})`
-              }}
+              style={{ filter: 'saturate(1.03) contrast(1.02)' }}
             />
             <div className="photo-frame-border" aria-hidden="true" />
           </div>
