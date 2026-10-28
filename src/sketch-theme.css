@@ -2113,3 +2113,127 @@ footer[id] {
     transform: none !important;
   }
 }
+
+
+/* Contrast fixes for brand marks on the warm paper cards. */
+.profile-card:nth-child(4) .profile-icon {
+  color: #24292f;
+  background: rgba(36, 41, 47, .09);
+  border-color: rgba(36, 41, 47, .2);
+}
+
+.profile-card:nth-child(4) .profile-icon svg {
+  fill: currentColor;
+}
+
+.profile-card:nth-child(6) .profile-icon {
+  color: #111418;
+  background: rgba(17, 20, 24, .07);
+  border-color: rgba(17, 20, 24, .2);
+}
+
+.profile-card:nth-child(6) .profile-icon svg {
+  fill: currentColor;
+}
+
+/* Mobile: a compact circular portrait takes less vertical space. */
+@media (max-width: 768px) {
+  .portal-stage.portal-stage-static {
+    padding-top: 28px;
+    padding-bottom: 38px;
+  }
+
+  .portal-static-layout {
+    gap: 22px;
+  }
+
+  .portal-static-image {
+    width: 100%;
+    padding: 10px 24px 30px 6px;
+  }
+
+  .portal-static-image .portal-photo-frame {
+    width: clamp(164px, 43vw, 198px);
+    height: clamp(164px, 43vw, 198px);
+    max-width: 72vw;
+    aspect-ratio: 1 / 1;
+    padding: 6px;
+    overflow: visible;
+    border-radius: 50%;
+    transform: rotate(.6deg);
+  }
+
+  .portal-static-image .portal-bg-img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center 20%;
+    border-radius: 50%;
+  }
+
+  .portal-static-image .photo-frame-border {
+    inset: 2px;
+    border-radius: 50%;
+  }
+
+  .portal-static-image .portal-photo-frame::before {
+    top: -8px;
+    left: 25%;
+    width: 65px;
+    height: 19px;
+    transform: rotate(-4deg);
+  }
+
+  .hero-photo-caption {
+    right: 0;
+    bottom: 0;
+    font-size: 10px;
+  }
+
+  .hero-handdrawn-mark {
+    top: -3%;
+    right: 0;
+    width: 48px;
+  }
+}
+
+@media (max-width: 420px) {
+  .portal-stage.portal-stage-static {
+    padding: 24px 17px 32px;
+  }
+
+  .portal-static-layout {
+    gap: 18px;
+  }
+
+  .portal-static-copy .portal-title,
+  .portal-static-copy .portal-title-wrapper-open .portal-title {
+    font-size: clamp(61px, 16vw, 77px) !important;
+  }
+
+  .portal-static-image {
+    padding: 8px 19px 27px 4px;
+  }
+
+  .portal-static-image .portal-photo-frame {
+    width: clamp(150px, 42vw, 174px);
+    height: clamp(150px, 42vw, 174px);
+  }
+
+  .hero-photo-caption {
+    gap: 6px;
+    font-size: 9px;
+  }
+
+  .hero-caption-line {
+    width: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portal-static-image .portal-photo-frame,
+  .portal-static-image .portal-photo-frame::before {
+    transform: none !important;
+  }
+}
