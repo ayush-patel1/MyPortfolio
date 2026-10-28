@@ -5282,3 +5282,89 @@ html {
 html[data-theme="dark"] {
   color-scheme: dark;
 }
+
+
+/* Timeline rail markers: one small dot beside each card, never inside its content. */
+.timeline-node {
+  display: none !important;
+}
+
+.experience-timeline {
+  --timeline-rail-x: 25px;
+}
+
+.experience-timeline::before {
+  left: var(--timeline-rail-x) !important;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--dp-color-line) 5%,
+    var(--dp-color-line) 95%,
+    transparent
+  ) !important;
+  opacity: .9;
+}
+
+.timeline-item::before {
+  position: absolute;
+  z-index: 3;
+  top: 22px;
+  left: calc(var(--timeline-rail-x) - 5px);
+  display: block;
+  width: 11px;
+  height: 11px;
+  content: "";
+  border: 2px solid var(--dp-color-ground);
+  border-radius: 50%;
+  background: var(--dp-color-accent);
+  box-shadow: 0 0 0 1px var(--dp-color-line);
+  pointer-events: none;
+}
+
+.timeline-item-current::before {
+  background: var(--dp-color-annotation);
+  box-shadow: 0 0 0 2px rgba(52, 76, 105, .2);
+}
+
+@media (max-width: 640px) {
+  .experience-timeline {
+    --timeline-rail-x: 18px;
+  }
+
+  .timeline-item::before {
+    top: 17px;
+    left: calc(var(--timeline-rail-x) - 5px);
+    width: 10px;
+    height: 10px;
+  }
+}
+
+html[data-theme="dark"] .experience-timeline::before {
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--dp-color-line) 5%,
+    var(--dp-color-line) 95%,
+    transparent
+  ) !important;
+}
+
+html[data-theme="dark"] .timeline-item::before {
+  border-color: var(--dp-color-ground);
+  background: var(--dp-color-accent);
+  box-shadow: 0 0 0 1px var(--dp-color-line);
+}
+
+html[data-theme="dark"] .timeline-item-current::before {
+  background: var(--dp-color-annotation);
+}
+
+/* Category names are the full labels; do not show redundant numeric/code prefixes. */
+.arsenal-tab-btn .tab-code,
+.skills-panel-header .panel-kicker {
+  display: none !important;
+}
+
+.arsenal-tab-btn {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
