@@ -68,7 +68,14 @@ const CloseSection = () => {
       </div>
 
       <div className="close-wordmark-wrapper" aria-hidden="true">
-        <span className="close-wordmark">AYUSH PATEL</span>
+        <img
+          src="/assets/ayush-patel-logo.svg"
+          alt=""
+          className="footer-brand-logo"
+          width="220"
+          height="185"
+          loading="lazy"
+        />
       </div>
     </footer>
   );
