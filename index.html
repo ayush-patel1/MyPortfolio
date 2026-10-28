@@ -8,6 +8,22 @@
     <title>Ayush Patel — Full Stack / Agentic AI Developer</title>
     <meta name="description" content="Portfolio of Ayush Patel, Full Stack / Agentic AI Developer building reliable software and agentic AI workflows." />
     <meta name="theme-color" content="#f7f2e7" />
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('portfolio-theme');
+          var theme = saved === 'light' || saved === 'dark'
+            ? saved
+            : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.dataset.theme = theme;
+          var color = theme === 'dark' ? '#171a1c' : '#f7f2e7';
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute('content', color);
+        } catch (e) {
+          document.documentElement.dataset.theme = 'light';
+        }
+      })();
+    </script>
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Ayush Patel — Full Stack / Agentic AI Developer" />
     <meta property="og:description" content="Engineering intelligent systems. Building what’s next." />
