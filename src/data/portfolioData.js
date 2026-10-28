@@ -5,7 +5,7 @@ export const personalInfo = {
   email: "ayush005rkt@gmail.com",
   github: "https://github.com/ayush-patel1",
   linkedin: "https://www.linkedin.com/in/ayush-patel1/",
-  location: "Varanasi, Uttar Pradesh, India",
+  location: "Varanasi, Uttar Pradesh",
   coordinates: "21°14'N 81°38'E",
   positioning: "I build intelligent systems that connect AI, software, and infrastructure.",
   heroHeadline: "Engineering intelligent systems. Building what’s next.",
