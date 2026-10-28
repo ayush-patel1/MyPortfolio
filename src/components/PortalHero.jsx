@@ -17,7 +17,7 @@ const PortalHero = () => {
           <div className="portal-title-wrapper portal-title-wrapper-open portal-static-copy">
             <p className="portal-eyebrow">
               <span className="hero-eyebrow-rule" aria-hidden="true" />
-              FULL STACK ENGINEERING / AGENTIC AI
+              FULL STACK / AGENTIC AI DEVELOPER
             </p>
 
             <h1 className="portal-title" id="hero-title">
