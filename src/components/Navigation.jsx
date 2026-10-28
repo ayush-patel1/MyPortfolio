@@ -1,13 +1,45 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { SiGithub } from 'react-icons/si';
-import { personalInfo } from '../data/portfolioData';
 import './Navigation.css';
 
 const Navigation = ({ onOpenCommandPalette }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [theme, setTheme] = useState(() => (
+    typeof document !== 'undefined' && document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light'
+  ));
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+
+  useEffect(() => {
+    let savedTheme = null;
+    try {
+      savedTheme = window.localStorage.getItem('portfolio-theme');
+    } catch {
+      savedTheme = null;
+    }
+
+    const initialTheme = savedTheme === 'light' || savedTheme === 'dark'
+      ? savedTheme
+      : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    document.documentElement.dataset.theme = initialTheme;
+    setTheme(initialTheme);
+    const themeColor = document.querySelector('meta[name="theme-color"]');
+    if (themeColor) themeColor.setAttribute('content', initialTheme === 'dark' ? '#171a1c' : '#f7f2e7');
+  }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = nextTheme;
+    setTheme(nextTheme);
+    try {
+      window.localStorage.setItem('portfolio-theme', nextTheme);
+    } catch {
+      // The toggle still works for this session if storage is unavailable.
+    }
+    const themeColor = document.querySelector('meta[name="theme-color"]');
+    if (themeColor) themeColor.setAttribute('content', nextTheme === 'dark' ? '#171a1c' : '#f7f2e7');
+  };
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -64,16 +96,25 @@ const Navigation = ({ onOpenCommandPalette }) => {
         </nav>
 
         <div className="nav-actions">
-          <a
-            href={personalInfo.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="nav-icon-link"
-            aria-label="GitHub Profile (opens in a new tab)"
-            title="GitHub"
+          <button
+            type="button"
+            className="nav-icon-link theme-toggle"
+            onClick={toggleTheme}
+            aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            aria-pressed={theme === 'dark'}
+            title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
           >
-            <SiGithub aria-hidden="true" />
-          </a>
+            {theme === 'dark' ? (
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.8" />
+                <path d="M12 2v2.1M12 19.9V22M4.93 4.93l1.48 1.48m11.18 11.18 1.48 1.48M2 12h2.1m15.8 0H22M4.93 19.07l1.48-1.48M17.59 6.41l1.48-1.48" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+              </svg>
+            ) : (
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M20.6 15.2A8.8 8.8 0 0 1 8.8 3.4 8.9 8.9 0 1 0 20.6 15.2Z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            )}
+          </button>
 
           <button
             className="mobile-menu-toggle"
