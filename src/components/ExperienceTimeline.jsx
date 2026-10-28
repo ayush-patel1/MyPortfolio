@@ -147,8 +147,8 @@ const ExperienceTimeline = () => {
             style={{ '--timeline-reveal-delay': `${Math.min(index, 4) * 75}ms` }}
             key={`${item.organization}-${item.role}`}
           >
+            <span className="timeline-node" aria-hidden="true" />
             <summary className="timeline-summary">
-              <span className="timeline-node" aria-hidden="true" />
               <span className="timeline-period">{item.period}</span>
               <span className="timeline-entry-copy">
                 <span className="timeline-role-line">
