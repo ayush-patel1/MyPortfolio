@@ -1,0 +1,761 @@
+/*
+ * Responsive design system override.
+ * Kept in one final layer so breakpoints stay predictable across components.
+ */
+
+:root {
+  --page-gutter: clamp(16px, 4vw, 64px);
+  --section-space: clamp(64px, 8vw, 128px);
+}
+
+html {
+  scroll-padding-top: 76px;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body,
+#root,
+.app-wrapper,
+.main-stage {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.app-wrapper,
+.main-stage {
+  overflow-x: clip;
+}
+
+main,
+section,
+footer,
+header,
+nav,
+article,
+div {
+  min-width: 0;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+img,
+video {
+  height: auto;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+a,
+summary {
+  -webkit-tap-highlight-color: transparent;
+}
+
+section[id],
+footer[id] {
+  scroll-margin-top: 72px;
+}
+
+/* Normalize horizontal section gutters without constraining full-bleed sections. */
+.about-section,
+.releases-section,
+.experience-section,
+.arsenal-section,
+.profiles-section,
+.recognition-section {
+  padding-inline: var(--page-gutter);
+}
+
+.about-container,
+.releases-container,
+.experience-container,
+.arsenal-container,
+.profiles-container,
+.recognition-container,
+.close-container {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+.about-headline,
+.releases-headline,
+.experience-headline,
+.arsenal-headline,
+.profiles-heading-row h2,
+.recognition-headline,
+.close-headline {
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+.about-lead,
+.about-sub,
+.releases-lede,
+.experience-intro,
+.exp-summary,
+.timeline-detail,
+.ach-desc,
+.profile-metric,
+.skill-context,
+.close-fineprint,
+.footer-val {
+  overflow-wrap: anywhere;
+}
+
+/* Navigation: keep the desktop links from colliding before the mobile breakpoint. */
+@media (min-width: 901px) and (max-width: 1180px) {
+  .nav-container {
+    padding-inline: 22px;
+    gap: 16px;
+  }
+
+  .nav-wordmark {
+    gap: 7px;
+    font-size: 13px;
+  }
+
+  .nav-monogram {
+    width: 27px;
+    height: 27px;
+  }
+
+  .nav-menu {
+    gap: clamp(12px, 1.7vw, 22px);
+  }
+
+  .nav-link {
+    font-size: 10px;
+    letter-spacing: .1em;
+  }
+
+  .nav-actions {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav-header {
+    height: 64px;
+  }
+
+  .nav-container {
+    min-height: 64px;
+    padding-inline: 20px;
+    gap: 12px;
+  }
+
+  .nav-menu {
+    display: none !important;
+  }
+
+  .nav-actions {
+    gap: 10px;
+    flex: 0 0 auto;
+  }
+
+  .mobile-menu-toggle {
+    display: inline-grid;
+    place-items: center;
+    min-width: 44px;
+    min-height: 44px;
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  .mobile-menu-drawer {
+    top: 64px;
+    padding: 18px clamp(18px, 5vw, 32px);
+    gap: 6px;
+    max-height: calc(100dvh - 64px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .mobile-nav-link {
+    display: block;
+    min-height: 44px;
+    padding: 12px 0;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+}
+
+/* Tablet layouts: stack multi-column content before columns become cramped. */
+@media (max-width: 960px) {
+  .about-section {
+    min-height: 0;
+    padding-block: clamp(64px, 9vw, 100px);
+  }
+
+  .about-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+
+  .about-content-col,
+  .about-visual-col {
+    grid-column: 1 / -1;
+  }
+
+  .about-visual-col {
+    display: none;
+  }
+
+  .releases-section {
+    min-height: 0;
+    padding-block: clamp(64px, 9vw, 104px);
+  }
+
+  .releases-container {
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(28px, 5vw, 52px);
+    align-items: start;
+  }
+
+  .releases-info,
+  .deck-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .deck-wrapper {
+    align-items: center;
+  }
+
+  .card-deck {
+    width: min(100%, 520px);
+    max-width: 100%;
+  }
+
+  .deck-meta-bar {
+    width: min(100%, 520px);
+  }
+
+  .arsenal-section,
+  .recognition-section {
+    padding-block: clamp(64px, 9vw, 104px);
+  }
+
+  .arsenal-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .arsenal-tabs-col {
+    width: 100%;
+  }
+
+  .skills-items-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  }
+}
+
+/* Tablet and mobile text/buttons should remain comfortable, not scaled-down desktop UI. */
+@media (max-width: 768px) {
+  :root {
+    --page-gutter: 22px;
+  }
+
+  .about-section,
+  .releases-section,
+  .experience-section,
+  .arsenal-section,
+  .profiles-section,
+  .recognition-section {
+    padding-block: 68px;
+  }
+
+  .experience-headline,
+  .about-headline,
+  .releases-headline,
+  .arsenal-headline,
+  .recognition-headline,
+  .close-headline {
+    font-size: clamp(29px, 6.2vw, 44px);
+    line-height: 1.05;
+  }
+
+  .about-lead,
+  .exp-summary,
+  .timeline-detail {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .about-sub,
+  .releases-lede,
+  .experience-intro,
+  .arsenal-lede,
+  .close-fineprint {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .section-label-group {
+    flex-wrap: wrap;
+    gap: 8px 10px;
+  }
+
+  .label-caps {
+    font-size: 10px;
+    line-height: 1.6;
+  }
+
+  .deck-controls-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .deck-nav-btn {
+    min-height: 42px;
+    flex: 1 1 120px;
+    padding: 10px 12px;
+    font-size: 10px;
+    letter-spacing: .06em;
+  }
+
+  .card-deck {
+    width: min(100%, 440px);
+    aspect-ratio: 0.88 / 1;
+  }
+
+  .card-inner {
+    padding: clamp(12px, 3vw, 20px);
+  }
+
+  .card-visual-frame {
+    height: clamp(112px, 30vw, 170px);
+  }
+
+  .card-title {
+    font-size: clamp(16px, 2.4vw, 20px);
+    line-height: 1.25;
+  }
+
+  .card-summary {
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  .card-tech-pill {
+    font-size: 10px;
+  }
+
+  .card-cta-btn {
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .skills-items-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+    gap: 12px;
+  }
+
+  .skill-item-card {
+    min-height: 0;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 16px;
+    text-align: left;
+    animation: none;
+    background: var(--surface);
+  }
+
+  .skill-card-top {
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .skill-icon {
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+    font-size: 23px;
+    animation: none;
+  }
+
+  .skill-name {
+    font-size: 14px;
+    line-height: 1.35;
+  }
+
+  .skill-context {
+    display: block !important;
+    font-size: 12px;
+    line-height: 1.55;
+    text-align: left;
+  }
+
+  .achievement-row {
+    grid-template-columns: 74px minmax(0, 1fr);
+    align-items: start;
+    gap: 14px;
+  }
+
+  .ach-left {
+    flex-wrap: wrap;
+    gap: 5px 8px;
+  }
+
+  .ach-center {
+    min-width: 0;
+  }
+
+  .ach-right {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .ach-title {
+    font-size: 16px;
+    line-height: 1.35;
+  }
+
+  .ach-desc {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+}
+
+/* Phones: one-column reading flow, full-width touch controls, zero accidental overflow. */
+@media (max-width: 560px) {
+  :root {
+    --page-gutter: 17px;
+  }
+
+  .nav-container {
+    padding-inline: 14px;
+  }
+
+  .nav-wordmark {
+    gap: 7px;
+    font-size: 12px;
+  }
+
+  .nav-monogram {
+    width: 25px;
+    height: 25px;
+  }
+
+  .nav-actions {
+    gap: 7px;
+  }
+
+  .nav-icon-link {
+    flex-basis: 38px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .nav-cmd-btn {
+    min-height: 38px;
+    padding-inline: 9px;
+  }
+
+  .mobile-menu-toggle {
+    min-width: 40px;
+    min-height: 40px;
+    padding: 6px;
+  }
+
+  .about-headline,
+  .releases-headline,
+  .experience-headline,
+  .arsenal-headline,
+  .profiles-heading-row h2,
+  .recognition-headline,
+  .close-headline {
+    font-size: clamp(30px, 8.8vw, 42px);
+    line-height: 1.02;
+  }
+
+  .profiles-heading-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-block: 18px 26px;
+  }
+
+  .profiles-index {
+    display: block;
+    padding: 0;
+  }
+
+  .profiles-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 9px;
+  }
+
+  .profile-card {
+    min-height: 72px;
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .profile-icon {
+    flex-basis: 42px;
+    width: 42px;
+    height: 42px;
+    font-size: 21px;
+  }
+
+  .profile-name {
+    font-size: 14px;
+  }
+
+  .profile-handle {
+    font-size: 10px;
+  }
+
+  .profile-metric {
+    display: block;
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  .arsenal-tabs-col {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    padding: 6px;
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    scroll-snap-type: x proximity;
+  }
+
+  .arsenal-tabs-col::-webkit-scrollbar {
+    display: none;
+  }
+
+  .arsenal-tab-btn {
+    flex: 0 0 auto;
+    min-height: 40px;
+    padding: 9px 12px;
+    scroll-snap-align: start;
+  }
+
+  .tab-code,
+  .tab-indicator {
+    display: none;
+  }
+
+  .tab-name {
+    flex: 0 0 auto;
+    margin-left: 0;
+    font-size: 12px;
+  }
+
+  .skills-items-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .skill-item-card {
+    padding: 15px;
+  }
+
+  .skill-context {
+    font-size: 12px;
+  }
+
+  .releases-container {
+    gap: 26px;
+  }
+
+  .card-deck {
+    width: 100%;
+    aspect-ratio: 0.84 / 1;
+  }
+
+  .card-visual-frame {
+    height: clamp(105px, 32vw, 135px);
+  }
+
+  .card-actions-bar {
+    gap: 7px;
+  }
+
+  .card-cta-btn {
+    min-height: 38px;
+    padding: 7px 10px;
+    font-size: 9.5px;
+  }
+
+  .deck-meta-bar {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .deck-hint-line {
+    font-size: 10px;
+    letter-spacing: .04em;
+    line-height: 1.5;
+  }
+
+  .achievement-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+    padding: 18px 0;
+  }
+
+  .ach-right {
+    grid-column: auto;
+  }
+
+  .ach-badge {
+    display: inline-flex;
+    max-width: 100%;
+    white-space: normal;
+    line-height: 1.4;
+  }
+
+  .close-dispatch-grid {
+    gap: 22px;
+    margin-bottom: 42px;
+  }
+
+  .close-actions-block {
+    width: 100%;
+    min-width: 0;
+    gap: 9px;
+  }
+
+  .close-btn {
+    width: 100%;
+    min-height: 44px;
+    padding: 12px 14px;
+    font-size: 10px;
+    letter-spacing: .06em;
+  }
+
+  .footer-strip {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 15px;
+    padding-block: 22px;
+  }
+
+  .footer-val {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .close-wordmark-wrapper {
+    display: none;
+  }
+
+  .palette-backdrop {
+    padding: 76px 10px max(14px, env(safe-area-inset-bottom));
+  }
+
+  .palette-search-row {
+    gap: 8px;
+    padding: 13px 12px;
+  }
+
+  .palette-input {
+    min-width: 0;
+    font-size: 14px;
+  }
+
+  .palette-item {
+    min-height: 44px;
+    gap: 8px;
+    padding: 11px 10px;
+  }
+
+  .palette-item-left {
+    min-width: 0;
+    gap: 8px;
+  }
+
+  .palette-item-section {
+    min-width: 55px;
+    font-size: 9px;
+    overflow-wrap: anywhere;
+  }
+
+  .palette-item-label {
+    min-width: 0;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 380px) {
+  .nav-wordmark > span {
+    max-width: 112px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .nav-icon-link {
+    display: none;
+  }
+
+  .about-section,
+  .releases-section,
+  .experience-section,
+  .arsenal-section,
+  .profiles-section,
+  .recognition-section {
+    padding-inline: 15px;
+  }
+
+  .timeline-item,
+  .timeline-item-right {
+    padding-left: 50px;
+  }
+
+  .experience-timeline::before {
+    left: 15px;
+  }
+
+  .timeline-node {
+    left: -3px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .timeline-summary {
+    padding: 12px;
+  }
+
+  .timeline-expanded {
+    padding-inline: 12px;
+  }
+
+  .profile-arrow {
+    flex: 0 0 auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
