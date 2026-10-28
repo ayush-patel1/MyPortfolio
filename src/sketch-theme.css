@@ -5272,3 +5272,13 @@ html[data-theme="dark"] .hero-eyebrow-rule,
 html[data-theme="dark"] .label-accent-line {
   background-color: var(--dp-color-accent) !important;
 }
+
+
+/* Keep native form controls aligned with the selected appearance. */
+html {
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
