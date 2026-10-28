@@ -322,8 +322,8 @@ html[data-theme="dark"] .theme-toggle:hover {
 
 /* Larger AP monogram in the navbar, sized to remain balanced with the wordmark. */
 .nav-monogram {
-  width: 48px;
-  height: 40px;
+  width: 58px;
+  height: 48px;
   padding: 1px;
   object-fit: contain;
   box-sizing: border-box;
@@ -333,8 +333,8 @@ html[data-theme="dark"] .theme-toggle:hover {
 
 @media (max-width: 500px) {
   .nav-monogram {
-    width: 42px;
-    height: 35px;
+    width: 48px;
+    height: 40px;
     padding: 1px;
   }
 }
