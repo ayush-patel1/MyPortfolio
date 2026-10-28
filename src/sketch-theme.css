@@ -5368,3 +5368,19 @@ html[data-theme="dark"] .timeline-item-current::before {
 .arsenal-tab-btn {
   grid-template-columns: minmax(0, 1fr) auto;
 }
+
+
+/* Give the centered odd final stack item its own complete frame. */
+@media (max-width: 420px) {
+  .skills-items-grid > .skill-item-card:last-child:nth-child(odd) {
+    border-top: 1px solid rgba(81, 77, 68, .24);
+    border-left: 1px solid rgba(81, 77, 68, .24);
+    box-sizing: border-box;
+    margin-top: -1px;
+  }
+
+  html[data-theme="dark"] .skills-items-grid > .skill-item-card:last-child:nth-child(odd) {
+    border-top-color: var(--hairline);
+    border-left-color: var(--hairline);
+  }
+}
