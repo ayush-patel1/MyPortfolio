@@ -110,7 +110,6 @@ const TechnicalArsenal = () => {
                   setActiveCategory(idx);
                 }}
               >
-                <span className="tab-code">{cat.code}</span>
                 <span className="tab-name">{cat.category}</span>
                 <span className="tab-indicator" aria-hidden="true">→</span>
               </button>
@@ -119,7 +118,6 @@ const TechnicalArsenal = () => {
 
           <div className="arsenal-skills-col">
             <div className="skills-panel-header">
-              <span className="panel-kicker">{currentCategory.code}</span>
               <h3 className="panel-title">{currentCategory.category}</h3>
             </div>
 
