@@ -43,10 +43,6 @@ const PortalHero = () => {
               </button>
             </div>
 
-            <div className="hero-note" aria-label="Education">
-              <span className="hero-note-mark" aria-hidden="true">✳</span>
-              <span>NIT RAIPUR · INFORMATION TECHNOLOGY · 2027</span>
-            </div>
           </div>
 
           <div className="portal-image-layer portal-static-image">
