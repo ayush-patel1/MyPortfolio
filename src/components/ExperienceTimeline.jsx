@@ -139,12 +139,11 @@ const ExperienceTimeline = () => {
             key={`${item.organization}-${item.role}`}
           >
             <summary className="timeline-summary">
-              <span className="timeline-node" aria-hidden="true">
-                <TimelineLogo type={item.icon} />
-              </span>
+              <span className="timeline-node" aria-hidden="true" />
               <span className="timeline-period">{item.period}</span>
               <span className="timeline-entry-copy">
                 <span className="timeline-role-line">
+                  <span className="timeline-card-logo" aria-hidden="true"><TimelineLogo type={item.icon} /></span>
                   <span className="timeline-role">{item.role}</span>
                   {item.current && <span className="active-position-dot" aria-label="Current position" title="Current position" />}
                 </span>
@@ -173,6 +172,15 @@ const ExperienceTimeline = () => {
                             <span className="timeline-progression-period">{position.period}</span>
                           </div>
                           <p className="timeline-progression-detail">{position.detail}</p>
+                          {position.websites && (
+                            <div className="timeline-site-links" aria-label="Maintained websites">
+                              {position.websites.map((site) => (
+                                <a href={site.url} key={site.url} target="_blank" rel="noopener noreferrer">
+                                  {site.label} <span aria-hidden="true">↗</span>
+                                </a>
+                              ))}
+                            </div>
+                          )}
                         </div>
                       </div>
                     ))}
