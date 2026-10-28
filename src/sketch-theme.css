@@ -2826,3 +2826,10 @@ footer[id] {
     font-size: 11px;
   }
 }
+
+
+@media (max-width: 768px) {
+  .portal-stage.portal-stage-static {
+    justify-content: flex-start;
+  }
+}
