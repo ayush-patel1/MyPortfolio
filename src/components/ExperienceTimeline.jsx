@@ -40,12 +40,21 @@ const timelineItems = [
     period: 'Jul 2024 – Present',
     organization: 'AAVARTAN, NIT Raipur',
     role: 'Tech Lead',
-    detail: 'Grew from contributing to the fest website to leading web development and delivery workflows.',
+    detail: 'Leads web development and maintains the DigCert and Technocracy websites for NIT Raipur.',
     icon: 'aavartan',
     current: true,
     positions: [
       { role: 'Tech Executive', period: 'Jul 2024 – Sep 2025', detail: 'Contributed to the fest website and its digital infrastructure.' },
-      { role: 'Tech Lead', period: 'Aug 2025 – Present', detail: 'Leading web development and improving the team’s delivery workflows.', active: true },
+      {
+        role: 'Tech Lead',
+        period: 'Aug 2025 – Present',
+        detail: 'Leading web development, delivery workflows, and maintenance of these platforms.',
+        active: true,
+        websites: [
+          { label: 'DigCert', url: 'https://digcert.nitrr.ac.in/' },
+          { label: 'Technocracy', url: 'https://technocracy.nitrr.ac.in/' },
+        ],
+      },
     ],
   },
   {
@@ -153,7 +162,6 @@ const ExperienceTimeline = () => {
             </summary>
 
             <div className="timeline-expanded">
-              <span className="timeline-expanded-index">{String(index + 1).padStart(2, '0')}</span>
               <div className="timeline-expanded-copy">
                 <p className="timeline-detail">{item.detail}</p>
                 {item.positions && (
