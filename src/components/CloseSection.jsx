@@ -46,7 +46,7 @@ const CloseSection = () => {
               rel="noopener noreferrer"
               className="close-btn close-btn-ghost"
             >
-              DOWNLOAD RESUME (PDF) ↓
+              VIEW RESUME (PDF) ↗
             </a>
           </div>
         </div>
