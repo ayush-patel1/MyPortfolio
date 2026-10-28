@@ -5195,3 +5195,80 @@ html[data-theme="dark"] select {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* Case-study diagrams, capability lists and pagination follow the same night-paper palette. */
+html[data-theme="dark"] .architecture-diagram,
+html[data-theme="dark"] .arch-node-card,
+html[data-theme="dark"] .capability-card,
+html[data-theme="dark"] .tradeoff-box,
+html[data-theme="dark"] .status-column,
+html[data-theme="dark"] .pagination-card {
+  color: var(--dp-color-ink) !important;
+  background: #202528 !important;
+  border-color: var(--hairline-hover) !important;
+}
+
+html[data-theme="dark"] .arch-node-title,
+html[data-theme="dark"] .status-col-header h4,
+html[data-theme="dark"] .tradeoff-box,
+html[data-theme="dark"] .pag-title {
+  color: var(--dp-color-ink) !important;
+}
+
+html[data-theme="dark"] .arch-node-desc,
+html[data-theme="dark"] .cap-text,
+html[data-theme="dark"] .challenge-item,
+html[data-theme="dark"] .status-items-list,
+html[data-theme="dark"] .pag-label {
+  color: var(--dp-color-ink-muted) !important;
+}
+
+html[data-theme="dark"] .casestudy-pagination {
+  background: #1c2023 !important;
+  border-color: var(--hairline) !important;
+}
+
+html[data-theme="dark"] .cs-disclaimer-box {
+  background: rgba(169, 197, 229, .08) !important;
+  border-color: rgba(169, 197, 229, .28) !important;
+}
+
+html[data-theme="dark"] .cs-stack-pill {
+  color: var(--dp-color-ink-muted) !important;
+  background: rgba(224, 217, 204, .04) !important;
+  border-color: var(--hairline) !important;
+}
+
+html[data-theme="dark"] .status-col-header {
+  border-color: var(--hairline) !important;
+}
+
+html[data-theme="dark"] .pagination-card:hover,
+html[data-theme="dark"] .arch-node-card:hover {
+  border-color: var(--dp-color-annotation) !important;
+}
+
+html[data-theme="dark"] .palette-kbd,
+html[data-theme="dark"] .palette-item-shortcut,
+html[data-theme="dark"] .nav-kbd {
+  color: var(--dp-color-ink-muted) !important;
+  background: #292e31 !important;
+  border-color: var(--hairline) !important;
+}
+
+/* Prevent selected light-only borders/backgrounds from leaking through in dark mode. */
+html[data-theme="dark"] .timeline-card-logo,
+html[data-theme="dark"] .timeline-card-logo .timeline-logo,
+html[data-theme="dark"] .timeline-logo-school,
+html[data-theme="dark"] .timeline-logo-robotix,
+html[data-theme="dark"] .timeline-logo-aavartan,
+html[data-theme="dark"] .timeline-logo-nit,
+html[data-theme="dark"] .timeline-logo-zscaler {
+  background-color: #f8f4eb !important;
+}
+
+html[data-theme="dark"] .hero-eyebrow-rule,
+html[data-theme="dark"] .label-accent-line {
+  background-color: var(--dp-color-accent) !important;
+}
