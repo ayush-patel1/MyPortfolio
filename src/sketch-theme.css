@@ -1394,3 +1394,167 @@ footer[id] {
     pointer-events: none;
   }
 }
+
+
+/* Hero refinement: a calmer title scale, true portrait proportions, clearer actions. */
+@media (min-width: 769px) {
+  .portal-stage-open .portal-image-layer {
+    justify-content: center;
+    padding: 52px clamp(72px, 8vw, 132px) 48px 53%;
+  }
+
+  .portal-stage-open .portal-photo-frame {
+    width: min(27vw, 372px);
+    height: auto;
+    max-width: 100%;
+    max-height: 66vh;
+    aspect-ratio: 698 / 1024;
+    border-width: 7px;
+    border-radius: 5px 4px 8px 5px;
+    box-shadow: 3px 4px 0 rgba(56, 53, 47, .13);
+    transform: rotate(.65deg);
+  }
+
+  .portal-stage-open .portal-photo-frame::before {
+    left: 29%;
+    width: 78px;
+    height: 22px;
+    top: -12px;
+    opacity: .78;
+    transform: rotate(-3deg);
+  }
+
+  .portal-title-wrapper-open {
+    left: clamp(40px, 6.6vw, 122px) !important;
+    width: 46%;
+    max-width: 760px;
+    padding-right: clamp(12px, 2vw, 34px);
+  }
+
+  .portal-title-wrapper-open .portal-title {
+    font-size: clamp(70px, 7vw, 112px) !important;
+    line-height: .92;
+  }
+
+  .portal-title-wrapper-open .portal-headline {
+    max-width: 21ch;
+    margin-top: 18px;
+    font-size: clamp(27px, 2.15vw, 34px);
+    line-height: 1.12;
+  }
+
+  .portal-title-wrapper-open .portal-supporting {
+    max-width: 42ch;
+    margin-top: 12px;
+    font-size: clamp(19px, 1.35vw, 22px);
+    line-height: 1.42;
+  }
+
+  .portal-title-wrapper-open .hero-ctas {
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .portal-title-wrapper-open .hero-btn {
+    min-height: 44px;
+    padding: 11px 19px;
+    font-size: 16px;
+    line-height: 1.2;
+    letter-spacing: 0;
+  }
+}
+
+/* At laptop widths, reserve enough width for both the copy and the portrait. */
+@media (min-width: 769px) and (max-width: 1120px) {
+  .portal-stage-open .portal-image-layer {
+    padding-left: 55%;
+    padding-right: 5%;
+  }
+
+  .portal-stage-open .portal-photo-frame {
+    width: min(29vw, 320px);
+    max-height: 58vh;
+  }
+
+  .portal-title-wrapper-open {
+    left: 5% !important;
+    width: 48%;
+  }
+
+  .portal-title-wrapper-open .portal-title {
+    font-size: clamp(62px, 7.2vw, 84px) !important;
+  }
+
+  .portal-title-wrapper-open .portal-headline {
+    font-size: clamp(24px, 2.6vw, 29px);
+  }
+
+  .portal-title-wrapper-open .portal-supporting {
+    font-size: 18px;
+  }
+
+  .portal-title-wrapper-open .hero-btn {
+    padding: 10px 13px;
+    font-size: 15px;
+  }
+}
+
+/* Preserve the balanced vertical stack on touch screens. */
+@media (max-width: 768px) {
+  .portal-stage-open .portal-image-layer {
+    justify-content: center;
+    padding: 0 18px;
+  }
+
+  .portal-photo-frame,
+  .portal-stage-open .portal-photo-frame {
+    border-width: 6px;
+    box-shadow: 3px 4px 0 rgba(56, 53, 47, .13);
+    transform: rotate(-.6deg);
+  }
+
+  .portal-title,
+  .portal-title-wrapper-open .portal-title {
+    font-size: clamp(58px, 15vw, 88px) !important;
+    line-height: .88;
+  }
+
+  .portal-headline,
+  .portal-title-wrapper-open .portal-headline {
+    font-size: clamp(25px, 6vw, 31px);
+    line-height: 1.12;
+  }
+
+  .portal-supporting,
+  .portal-title-wrapper-open .portal-supporting {
+    max-width: 34ch;
+    font-size: 19px;
+    line-height: 1.42;
+  }
+
+  .hero-btn,
+  .portal-title-wrapper-open .hero-btn {
+    min-height: 44px;
+    padding: 10px 14px;
+    font-size: 16px;
+    letter-spacing: 0;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 420px) {
+  .portal-title,
+  .portal-title-wrapper-open .portal-title {
+    font-size: clamp(54px, 14vw, 66px) !important;
+  }
+}
+
+/* The paper details remain still; only small control feedback moves. */
+@media (prefers-reduced-motion: reduce) {
+  .portal-photo-frame,
+  .portal-stage-open .portal-photo-frame,
+  .portal-photo-frame::before,
+  .portal-title-outline {
+    transform: none !important;
+  }
+}
