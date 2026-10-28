@@ -69,7 +69,7 @@ const Navigation = ({ onOpenCommandPalette }) => {
           aria-label="Ayush Patel home"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
-          <img src="/ap-monogram.svg" alt="" className="nav-monogram" />
+          <img src="/assets/ayush-patel-monogram.svg" alt="" className="nav-monogram" width="220" height="135" />
           <span>AYUSH PATEL<span className="nav-dot">.</span></span>
         </Link>
 
