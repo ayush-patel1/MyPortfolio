@@ -1,6 +1,6 @@
 export const personalInfo = {
   name: "Ayush Patel",
-  role: "Full Stack Developer | Agentic AI Engineer",
+  role: "Full Stack / Agentic AI Developer",
   education: "B.Tech in Information Technology, NIT Raipur, 2023–2027",
   email: "ayush005rkt@gmail.com",
   github: "https://github.com/ayush-patel1",
