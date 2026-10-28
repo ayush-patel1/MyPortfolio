@@ -3726,3 +3726,19 @@ footer[id] {
     font-size: 15px;
   }
 }
+
+
+/* Center a lone technology in the final row instead of leaving it as an outlier. */
+@media (max-width: 768px) {
+  .skills-items-grid > .skill-item-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    width: 50%;
+    justify-self: center;
+  }
+}
+
+@media (max-width: 390px) {
+  .skills-items-grid > .skill-item-card:last-child:nth-child(odd) {
+    width: calc(50% - 4px);
+  }
+}
