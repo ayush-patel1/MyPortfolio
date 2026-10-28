@@ -54,7 +54,7 @@ const CloseSection = () => {
         <div className="footer-strip">
           <div className="footer-col footer-col-meta">
             <span className="label-caps">LOCATION</span>
-            <span className="footer-val">{personalInfo.coordinates} — {personalInfo.location}</span>
+            <span className="footer-val">{personalInfo.location}</span>
           </div>
 
           <div className="footer-col footer-col-status">
