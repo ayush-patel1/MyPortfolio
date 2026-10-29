@@ -5384,3 +5384,39 @@ html[data-theme="dark"] .timeline-item-current::before {
     border-left-color: var(--hairline);
   }
 }
+
+
+/* Project-specific dashboard thumbnails: preserve their colors and full wide UI framing. */
+.card-visual-frame {
+  height: auto !important;
+  aspect-ratio: 2 / 1;
+  max-height: none;
+  min-height: 0;
+  flex: 0 0 auto;
+  background: #f7f2e7 !important;
+  overflow: hidden;
+}
+
+.card-artwork-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  filter: none !important;
+}
+
+.card-artwork-overlay {
+  display: none !important;
+}
+
+html[data-theme="dark"] .card-visual-frame {
+  background: #f7f2e7 !important;
+}
+
+@media (max-width: 600px) {
+  .card-visual-frame {
+    aspect-ratio: 2 / 1;
+    margin-bottom: 12px;
+  }
+}
