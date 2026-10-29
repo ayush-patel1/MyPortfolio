@@ -21,7 +21,7 @@ export const projectsData = [
     category: "AGENTIC AI / BIOMEDICAL RESEARCH",
     stack: ["LangGraph", "FastAPI", "React", "Python", "RAG", "LLM APIs"],
     summary: "An exploratory research platform that searches PubMed, extracts text from research PDFs, coordinates specialized agents, and produces source-linked literature summaries and reports.",
-    image: "/images/neurorepurpose-cover.webp",
+    image: "/images/project-neurorepurpose.webp",
     links: {
       demo: "https://pharma-mine.netlify.app/",
       github: "https://github.com/ayush-patel1/pharma-agentic-ai",
@@ -62,7 +62,7 @@ export const projectsData = [
     category: "AI / CYBERSECURITY / IoMT",
     stack: ["Python", "ANN-LSTM", "TensorFlow", "Node.js", "Streamlit", "IoMT"],
     summary: "A proof-of-concept intrusion detection platform exploring how machine-learning models can identify malicious network traffic targeting connected medical devices.",
-    image: "/images/project2.png",
+    image: "/images/project-securegluco.webp",
     links: {
       dashboard: "https://secure-gluco.vercel.app/",
       demo: "https://modelbackendai.streamlit.app/",
@@ -103,7 +103,7 @@ export const projectsData = [
     category: "FULL STACK / INDUSTRIAL OPERATIONS",
     stack: ["React", "Vite", "Tailwind CSS", "Node.js", "Express", "MongoDB", "JWT", "Cloudinary", "Recharts"],
     summary: "A full-stack industrial operations platform for managing equipment, tracking maintenance, recording incidents, and visualizing operational performance.",
-    image: "/images/project3.png",
+    image: "/images/project-safety-management.webp",
     links: {
       demo: "https://safety-management-f.onrender.com/",
       github: "https://github.com/ayush-patel1/safety-management",
@@ -144,7 +144,7 @@ export const projectsData = [
     category: "AGENTIC ENGINEERING / DEVELOPER TOOLS",
     stack: ["Next.js", "React", "TypeScript", "FastAPI", "LangGraph", "MCP", "PostgreSQL", "Docker", "GitHub Actions"],
     summary: "An engineering investigation platform designed to turn customer-support issues into evidence-backed investigations, using controlled integrations with code repositories, logs, deployments, and databases.",
-    image: "/images/project4.png",
+    image: "/images/project-support2fix.webp",
     links: {
       github: "https://github.com/ayush-patel1/Support2Fix",
       caseStudy: "/work/support2fix"
