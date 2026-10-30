@@ -372,7 +372,7 @@ export const codingProfiles = [
   {
     name: "LinkedIn",
     handle: "ayush-patel1",
-    url: "https://www.linkedin.com/in/ayush-patel1/",
+    url: "https://www.linkedin.com/in/ayush-patel05",
     metric: "Professional network"
   },
   {
